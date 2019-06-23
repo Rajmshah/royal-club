@@ -1,0 +1,11 @@
+/* Breakpoint for medium viewport */
+
+@include media-breakpoint-down(md) {
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 0.4rem;
+        padding-left: 0.4rem;
+    }
+    .navbar-nav li a {
+        font-size: 0.781rem;
+    }
+}
