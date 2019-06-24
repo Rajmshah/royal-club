@@ -51,7 +51,7 @@ module.exports = [
   'frontend/js/controllers/about.js',
   'frontend/js/controllers/sponsor.js',
   'frontend/js/controllers/soldplayers.js',
-  'frontend/js/controllers/livestats.js',
+  'frontend/js/controllers/footer.js',
   'frontend/js/controllers/header-controller.js',
   'frontend/js/controllers/language-controller.js',
 ];

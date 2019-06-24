@@ -14,7 +14,8 @@ $blue: #0275d8 !default;
 $teal: #5bc0de !default;
 $pink: #ff5b77 !default;
 $purple: #613d7c !default;
-$bgcolor: #263973 !default;
+$header-footer: #263973 !default;
+$header-footer-hover: #6a6e88 !default;
 // Create grayscale
 $gray-dark: #292b2c !default;
 $gray: #464a4c !default;
@@ -302,7 +303,7 @@ header {
 }
 
 .bg-color {
-  background-color: $bgcolor;
+  background-color: $header-footer;
 }
 
 .bg-color-black {
@@ -323,7 +324,7 @@ header {
 }
 
 .color-bg {
-  color: $bgcolor;
+  color: $header-footer;
 }
 
 .pointer {
@@ -379,7 +380,7 @@ header {
     margin: 0;
     font-size: 3rem;
     line-height: 1;
-    color: $bgcolor;
+    color: $header-footer;
   }
   padding: 40px 0 0;
   height: 100vh;
