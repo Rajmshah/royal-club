@@ -101,8 +101,7 @@ $btn-padding-x: 1rem !default;
 $btn-padding-y: 0.5rem !default;
 $btn-line-height: 1.25 !default;
 $btn-font-weight: $font-weight-normal !default;
-$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15),
-  0 1px 1px rgba($black, 0.075) !default;
+$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
 $btn-focus-box-shadow: 0 0 0 2px rgba($brand-primary, 0.25) !default;
 $btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125) !default;
 // Forms
@@ -142,6 +141,23 @@ $dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175) !default;
 @font-face {
   font-family: "OpenSans-Bold";
   src: url("../fonts/OpenSans-Bold.TTF");
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"),
+    url("../fonts/fontawesome-webfont.woff") format("woff"),
+    url("../fonts/fontawesome-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+  font-family: "FontAwesome";
 }
 
 .opensans-semibold {

@@ -62,37 +62,43 @@ myApp.controller("headerCtrl", function(
         subnav: []
       },
       {
-        name: "Auction Stats",
+        name: "About us",
         classis: "active",
         anchor: "auction",
         subnav: teamSubtitle
       },
       {
-        name: "Groups",
+        name: "Academy",
         classis: "active",
         anchor: "auction",
         subnav: categorySubtitle
       },
       {
-        name: "Sold Player",
+        name: "Club",
         classis: "active",
         anchor: "soldplayers",
         subnav: []
       },
-    //  {
-    //    name: "Sponsor",
-    //    classis: "active",
-    //    anchor: "sponsor",
-   //     subnav: []
-   //   },
-   //   {
-   // name: "About Us",
-   //  classis: "active",
-   //   anchor: "about",
-   //    subnav: []
-   //   },
       {
-        name: "Live Stats",
+        name: "Gallery",
+        classis: "active",
+        anchor: "sponsor",
+        subnav: []
+      },
+      {
+        name: "Master class",
+        classis: "active",
+        anchor: "about",
+        subnav: []
+      },
+      {
+        name: "News & updates",
+        classis: "active",
+        anchor: "livestats",
+        subnav: []
+      },
+      {
+        name: "Contact us",
         classis: "active",
         anchor: "livestats",
         subnav: []
