@@ -44,12 +44,16 @@ module.exports = [
 
   // Contorllers
   "frontend/js/controllers/controller.js",
-  "frontend/js/controllers/team.js",
-  "frontend/js/controllers/category.js",
-  "frontend/js/controllers/about.js",
-  "frontend/js/controllers/sponsor.js",
-  "frontend/js/controllers/soldplayers.js",
   "frontend/js/controllers/footer.js",
   "frontend/js/controllers/header-controller.js",
-  "frontend/js/controllers/language-controller.js"
+  "frontend/js/controllers/language-controller.js",
+
+  "frontend/views/content/about-us/about-us.js",
+  "frontend/views/content/academy/academy.js",
+  "frontend/views/content/club/club.js",
+  "frontend/views/content/contact-us/contact-us.js",
+  "frontend/views/content/gallery/gallery.js",
+  "frontend/views/content/home/home.js",
+  "frontend/views/content/master-class/master-class.js",
+  "frontend/views/content/news-updates/news-updates.js"
 ];

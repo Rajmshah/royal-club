@@ -15,7 +15,8 @@ $teal: #5bc0de !default;
 $pink: #ff5b77 !default;
 $purple: #613d7c !default;
 $header-footer: #263973 !default;
-$header-footer-hover: #6a6e88 !default;
+$header-footer-hover: #e1c7c7 !default;
+$text-color: #d0e1ce !default;
 // Create grayscale
 $gray-dark: #292b2c !default;
 $gray: #464a4c !default;
@@ -185,7 +186,6 @@ $dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175) !default;
 }
 
 body {
-  padding-top: 56px;
   font-family: "Opensans Regular" !important;
 }
 
@@ -220,15 +220,6 @@ a,
   transition: all ease 300ms;
 }
 
-footer {
-  font-size: 18px;
-  color: #eee;
-  padding: 16px 0;
-  p {
-    margin: 0;
-  }
-}
-
 //bootstrap forms
 .input-lg,
 .input-group-lg > .form-control,
@@ -238,16 +229,22 @@ footer {
 .form-control {
   border-radius: 0;
   box-shadow: none;
+  transition: unset;
 }
 
 .form-control:focus {
   border-color: $brand-primary;
   outline: 0;
+  transition: unset;
   box-shadow: none;
 }
 
 .form-group {
-  position: relative;
+  margin-bottom: 1.38rem;
+}
+
+.noresize {
+  resize: none;
 }
 
 .form-invalid {

@@ -1,21 +1,47 @@
 footer {
   background-color: $header-footer;
-  font-size: 15px;
+  font-size: $font-size-sm;
+  color: $text-color;
+  padding: 16px 0;
+}
+
+.footer-css {
+  input {
+    background-color: #ede7e7;
+    color: $header-footer;
+    &:focus {
+      background-color: #ede7e7;
+      color: $header-footer;
+      border: 0;
+    }
+  }
+  .btn {
+    padding: 0;
+    background-color: $white;
+    box-shadow: none;
+    border: 0;
+  }
+  .far {
+    font-size: 40px;
+    padding: 0 3px;
+    line-height: 0.8;
+    color: $header-footer;
+  }
 }
 
 .footerMain {
   display: flex;
   justify-content: center;
-  color: $white;
 }
 
 .footerLists {
   a {
-    color: $white;
+    color: $text-color;
     text-decoration: none;
     &:hover {
       color: $header-footer-hover;
       text-decoration: none;
+      border-bottom: 1px solid rgba(229, 193, 0, 0.29);
     }
   }
   .listSeparator {

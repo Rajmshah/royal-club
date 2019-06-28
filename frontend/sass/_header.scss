@@ -1,0 +1,27 @@
+header {
+  font-size: $font-size-sm;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  .navbar-light .navbar-nav {
+    .nav-item {
+      padding: 0 3px;
+      .nav-link {
+        color: $text-color;
+        border-bottom: 3px solid transparent;
+        &:hover {
+          color: $header-footer-hover;
+          border-bottom: 3px solid $white;
+          transition: auto;
+          transform: skew(8deg, -1deg);
+        }
+      }
+    }
+  }
+  .navbar-light .navbar-nav .active > .nav-link {
+    color: $header-footer-hover;
+    border-bottom: 3px solid $white;
+    transition: auto;
+    transform: skew(8deg, -1deg);
+  }
+}
