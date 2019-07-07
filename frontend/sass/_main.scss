@@ -14,9 +14,10 @@ $blue: #0275d8 !default;
 $teal: #5bc0de !default;
 $pink: #ff5b77 !default;
 $purple: #613d7c !default;
-$header-footer: #263973 !default;
+$header-footer: #161616 !default;
 $header-footer-hover: #e1c7c7 !default;
 $text-color: #d0e1ce !default;
+$button-border: #cfd4da !default;
 // Create grayscale
 $gray-dark: #292b2c !default;
 $gray: #464a4c !default;
@@ -145,6 +146,31 @@ $dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175) !default;
 }
 
 @font-face {
+  font-family: "Oswald SemiBold";
+  src: url("../fonts/Oswald-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Oswald Regular";
+  src: url("../fonts/Oswald-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Oswald Light";
+  src: url("../fonts/Oswald-Light.ttf");
+}
+
+@font-face {
+  font-family: "Oswald ExtraLight";
+  src: url("../fonts/Oswald-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "Oswald Bold";
+  src: url("../fonts/Oswald-Bold.ttf");
+}
+
+@font-face {
   font-family: "FontAwesome";
   src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"),
     url("../fonts/fontawesome-webfont.woff") format("woff"),
@@ -181,6 +207,36 @@ $dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175) !default;
 
 .opensans-light {
   font-family: "Opensans Light";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.oswald-semiBold {
+  font-family: "Oswald SemiBold";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.oswald-bold {
+  font-family: "Oswald Bold";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.oswald-regular {
+  font-family: "Oswald Regular";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.oswald-light {
+  font-family: "Oswald Light";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.oswald-extraLight {
+  font-family: "Oswald ExtraLight";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -240,7 +296,12 @@ a,
 }
 
 .form-group {
-  margin-bottom: 1.38rem;
+  margin-bottom: 2rem;
+}
+
+.btn-light {
+  border-color: $button-border;
+  background-color: $white;
 }
 
 .noresize {
@@ -276,7 +337,7 @@ a,
 }
 
 .content {
-  min-height: 450px;
+  @extend .pt-6;
 }
 
 .img-full {
@@ -358,6 +419,30 @@ header {
 
 .m-top {
   margin: 15px 0 0;
+}
+
+.pt-6 {
+  padding-top: 6.6rem;
+}
+
+.font-24 {
+  font-size: 1.5rem;
+}
+
+.font-18 {
+  font-size: 1.125rem;
+}
+
+.font-14 {
+  font-size: 0.875rem;
+}
+
+.font-12 {
+  font-size: 0.75rem;
+}
+
+.font-10 {
+  font-size: 0.625rem;
 }
 
 .pull-right {

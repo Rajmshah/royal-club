@@ -13,7 +13,7 @@ header {
           color: $header-footer-hover;
           border-bottom: 3px solid $white;
           transition: auto;
-          transform: skew(8deg, -1deg);
+          transform: skew(14deg, -2deg);
         }
       }
     }
@@ -22,6 +22,18 @@ header {
     color: $header-footer-hover;
     border-bottom: 3px solid $white;
     transition: auto;
-    transform: skew(8deg, -1deg);
+    transform: skew(14deg, -2deg);
+  }
+  .navbar-light .navbar-toggler {
+    color: $white;
+    border-color: $white;
+  }
+  .navbar-toggler:hover,
+  .navbar-toggler:focus {
+    outline: 0;
+  }
+  .navbar-toggler {
+    background-color: $white;
+    border: 1px solid $white;
   }
 }

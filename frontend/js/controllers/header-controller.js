@@ -35,12 +35,12 @@ myApp.controller("headerCtrl", function(
       anchor: "academy",
       subnav: []
     },
-    {
-      name: "Club",
-      classis: "active",
-      anchor: "club",
-      subnav: []
-    },
+    // {
+    //   name: "Club",
+    //   classis: "active",
+    //   anchor: "club",
+    //   subnav: []
+    // },
     {
       name: "Gallery",
       classis: "active",

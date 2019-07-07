@@ -1,3 +1,9 @@
 /* Breakpoint for medium viewport */
 
-@include media-breakpoint-down(sm) {}
+@include media-breakpoint-down(sm) {
+  //Header
+  .navbar-nav {
+    width: 50%;
+  }
+  //Header End
+}
