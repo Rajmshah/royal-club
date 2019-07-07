@@ -15,6 +15,7 @@ $teal: #5bc0de !default;
 $pink: #ff5b77 !default;
 $purple: #613d7c !default;
 $header-footer: #161616 !default;
+$bg-light: #d9d9d9 !default;
 $header-footer-hover: #e1c7c7 !default;
 $text-color: #d0e1ce !default;
 $button-border: #cfd4da !default;
@@ -304,7 +305,7 @@ a,
   background-color: $white;
 }
 
-.noresize {
+.no-resize {
   resize: none;
 }
 
@@ -382,6 +383,10 @@ header {
 
 .bg-color-black {
   background-color: $black;
+}
+
+.bg-color-light {
+  background-color: $bg-light;
 }
 
 .bg-team,
