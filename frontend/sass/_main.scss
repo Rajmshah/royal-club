@@ -309,6 +309,10 @@ a,
   resize: none;
 }
 
+.no-underline:hover {
+  text-decoration: none;
+}
+
 .form-invalid {
   color: $brand-danger;
   .form-control {

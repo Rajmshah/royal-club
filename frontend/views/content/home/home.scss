@@ -3,3 +3,20 @@
     border-bottom-width: 2px !important;
   }
 }
+
+.slogan {
+  font-size: 2.125rem;
+  letter-spacing: 2px;
+}
+
+.ad-holder:hover {
+  img {
+    transform: scale(1.02);
+  }
+}
+
+.ad-block {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
