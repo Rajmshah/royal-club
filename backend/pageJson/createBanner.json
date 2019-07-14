@@ -2,31 +2,30 @@
   "title": "Create Banner",
   "name": "Banner",
   "jsonPage": "viewBanner",
-  "desciption":
-    "(Upload image after compressing it as much as possible. For faster loading.)",
+  "desciption": "(Upload image after compressing it as much as possible. For faster loading.)",
   "pageType": "create",
   "urlFields": ["Banner"],
   "fields": [
     {
-      "name": "Banner",
+      "name": "Image",
       "type": "image",
-      "tableRef": "banner",
-      "size": "1920 x 720",
-      "placeholder": "Upload banner",
-      "id": "banner",
+      "tableRef": "image",
+      "size": "1920 x 600",
+      "placeholder": "Upload Image",
+      "id": "image",
       "view": true,
       "disabled": true,
       "validation": ["", "", ""],
       "url": ""
     },
     {
-      "name": "Is Whole Page",
-      "type": "checkbox",
-      "tableRef": "isWhole",
-      "id": "isWhole",
-      "validation": ["", "", ""],
-      "url": "",
-      "onView": true
+      "name": "Title",
+      "type": "text",
+      "tableRef": "title",
+      "placeholder": "Enter Title",
+      "id": "title",
+      "validation": ["", "trim", "unique"],
+      "url": ""
     },
     {
       "name": "Page Name",
@@ -39,7 +38,50 @@
       "dropDownField": "",
       "dropDownType": "single",
       "onView": true,
-      "dropDown": ["Sponsor", "About"]
+      "dropDown": [
+        "Club",
+        "Master Class",
+        "Academy",
+        "News & Update",
+        "Gallery",
+        "About Us",
+        "Contact Us"
+      ]
+    },
+    {
+      "name": "Status",
+      "type": "tags",
+      "tableRef": "status",
+      "placeholder": "Select Status",
+      "id": "status",
+      "validation": ["", "trim", ""],
+      "url": "",
+      "dropDownField": "",
+      "dropDownType": "single",
+      "onView": true,
+      "dropDown": ["Enable", "Disable"]
+    },
+    {
+      "name": "Link Type",
+      "type": "tags",
+      "tableRef": "linkType",
+      "placeholder": "Select Link Type",
+      "id": "linkType",
+      "validation": ["", "trim", ""],
+      "url": "",
+      "dropDownField": "",
+      "dropDownType": "single",
+      "onView": true,
+      "dropDown": ["Internal", "External"]
+    },
+    {
+      "name": "Link",
+      "type": "text",
+      "tableRef": "link",
+      "placeholder": "Enter Link",
+      "id": "link",
+      "validation": ["", "trim", "unique"],
+      "url": ""
     }
   ],
   "action": [

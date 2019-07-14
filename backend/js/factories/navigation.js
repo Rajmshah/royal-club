@@ -12,51 +12,45 @@ myApp.factory("NavigationService", function($http) {
       icon: "phone"
     },
     {
-      name: "Team List",
-      classis: "activeColor",
-      sref: "#!/teamlist",
-      icon: "phone"
-    },
-    {
-      name: "Team Details",
-      classis: "activeColor",
-      sref: "#!/teamdetails",
-      icon: "phone"
-    },
-    {
-      name: "Category Lists",
-      classis: "activeColor",
-      sref: "#!/categorylist",
-      icon: "phone"
-    },
-    {
-      name: "Category Details",
-      classis: "activeColor",
-      sref: "#!/categorydetails",
-      icon: "phone"
-    },
-    {
-      name: "Auction",
-      classis: "activeColor",
-      sref: "#!/auction",
-      icon: "phone"
-    },
-    {
-      name: "Team Player List",
-      classis: "activeColor",
-      sref: "#!/teamplayerlist",
-      icon: "phone"
-    },
-    {
-      name: "Sponsor",
-      classis: "activeColor",
-      sref: "#!/sponsor",
-      icon: "phone"
-    },
-    {
       name: "Banner",
       classis: "activeColor",
       sref: "#!/page/viewBanner//",
+      icon: "phone"
+    },
+    {
+      name: "Enquiry Form",
+      classis: "activeColor",
+      sref: "#!/page/viewEnquiryForm//",
+      icon: "phone"
+    },
+    {
+      name: "Subscription",
+      classis: "activeColor",
+      sref: "#!/page/viewSubscription//",
+      icon: "phone"
+    },
+    {
+      name: "Master Class",
+      classis: "activeColor",
+      sref: "#!/page/viewMasterClass//",
+      icon: "phone"
+    },
+    {
+      name: "Press",
+      classis: "activeColor",
+      sref: "#!/page/viewPress//",
+      icon: "phone"
+    },
+    {
+      name: "Achievement",
+      classis: "activeColor",
+      sref: "#!/page/viewAchievement//",
+      icon: "phone"
+    },
+    {
+      name: "Contact Us",
+      classis: "activeColor",
+      sref: "#!/page/viewContactUs//",
       icon: "phone"
     }
   ];

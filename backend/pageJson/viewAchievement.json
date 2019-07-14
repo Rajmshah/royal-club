@@ -1,14 +1,20 @@
 {
-  "title": "Banner",
-  "description": "List of Banner",
+  "title": "Achievement",
+  "description": "List of Achievement",
   "pageType": "view",
   "sendIdWithCreate": true,
   "urlFields": ["_id"],
   "fields": [
     {
-      "name": "Page Name",
+      "name": "Title",
       "isSort": "",
-      "tableRef": "pageName"
+      "tableRef": "title"
+    },
+    {
+      "name": "Date",
+      "isSort": "",
+      "tableRef": "date",
+      "type": "date"
     },
     {
       "name": "Status",
@@ -22,7 +28,7 @@
       "icon": "fa-pencil",
       "buttonClass": "btn-primary m-right",
       "type": "page",
-      "action": "editBanner",
+      "action": "editAchievement",
       "fieldsToSend": {
         "_id": "_id"
       }
@@ -32,9 +38,9 @@
       "icon": "fa-trash",
       "buttonClass": "btn-danger m-left",
       "type": "apiCallConfirm",
-      "title": "Delete Banner",
-      "content": "Are you sure you want to delete  Banner?",
-      "api": "Banner/delete",
+      "title": "Delete Achievement",
+      "content": "Are you sure you want to delete  Achievement?",
+      "api": "Achievement/delete",
       "fieldsToSend": {
         "name": "_id",
         "value": "_id"
@@ -47,11 +53,11 @@
       "icon": "plus",
       "class": "btn-success",
       "type": "page",
-      "action": "createBanner"
+      "action": "createAchievement"
     }
   ],
   "apiCall": {
-    "url": "Banner/search",
+    "url": "Achievement/search",
     "params": "_id"
   }
 }

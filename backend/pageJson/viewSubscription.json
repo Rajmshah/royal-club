@@ -1,0 +1,33 @@
+{
+  "title": "Subscription",
+  "description": "List of Subscription",
+  "pageType": "view",
+  "sendIdWithCreate": true,
+  "urlFields": ["_id"],
+  "fields": [
+    {
+      "name": "Email",
+      "isSort": "",
+      "tableRef": "email"
+    }
+  ],
+  "action": [
+    {
+      "name": "delete",
+      "icon": "fa-trash",
+      "buttonClass": "btn-danger m-left",
+      "type": "apiCallConfirm",
+      "title": "Delete Subscription",
+      "content": "Are you sure you want to delete  Subscription?",
+      "api": "Subscription/delete",
+      "fieldsToSend": {
+        "name": "_id",
+        "value": "_id"
+      }
+    }
+  ],
+  "apiCall": {
+    "url": "Subscription/search",
+    "params": "_id"
+  }
+}

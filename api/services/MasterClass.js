@@ -1,12 +1,8 @@
 var schema = new Schema({
-  masterInfo: [
-    {
-      name: {
-        type: String
-      },
-      content: String
-    }
-  ]
+  name: {
+    type: String
+  },
+  content: String
 });
 
 schema.plugin(deepPopulate, {});

@@ -6,14 +6,20 @@
   "urlFields": ["_id"],
   "fields": [
     {
+      "name": "Banner",
+      "isSort": "",
+      "tableRef": "banner",
+      "type": "image"
+    },
+    {
+      "name": "Is Whole",
+      "isSort": "",
+      "tableRef": "isWhole"
+    },
+    {
       "name": "Page Name",
       "isSort": "",
       "tableRef": "pageName"
-    },
-    {
-      "name": "Status",
-      "isSort": "",
-      "tableRef": "status"
     }
   ],
   "action": [
@@ -47,7 +53,7 @@
       "icon": "plus",
       "class": "btn-success",
       "type": "page",
-      "action": "createBanner"
+      "action": "createContactUs"
     }
   ],
   "apiCall": {

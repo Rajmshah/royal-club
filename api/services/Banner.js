@@ -1,7 +1,7 @@
 var schema = new Schema({
   image: String,
   title: String,
-  type: {
+  pageName: {
     type: String,
     enum: [
       "Club",

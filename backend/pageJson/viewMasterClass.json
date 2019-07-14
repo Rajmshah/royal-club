@@ -1,28 +1,23 @@
 {
-  "title": "Banner",
-  "description": "List of Banner",
+  "title": "Master Class",
+  "description": "List of Master Class",
   "pageType": "view",
   "sendIdWithCreate": true,
   "urlFields": ["_id"],
   "fields": [
     {
-      "name": "Page Name",
+      "name": "Name",
       "isSort": "",
-      "tableRef": "pageName"
-    },
-    {
-      "name": "Status",
-      "isSort": "",
-      "tableRef": "status"
+      "tableRef": "name"
     }
   ],
   "action": [
     {
       "name": "edit",
       "icon": "fa-pencil",
-      "buttonClass": "btn-primary m-right",
+      "buttonClass": "btn-primary",
       "type": "page",
-      "action": "editBanner",
+      "action": "editMasterClass",
       "fieldsToSend": {
         "_id": "_id"
       }
@@ -30,11 +25,11 @@
     {
       "name": "delete",
       "icon": "fa-trash",
-      "buttonClass": "btn-danger m-left",
+      "buttonClass": "btn-danger",
       "type": "apiCallConfirm",
-      "title": "Delete Banner",
-      "content": "Are you sure you want to delete  Banner?",
-      "api": "Banner/delete",
+      "title": "Delete Master Class",
+      "content": "Are you sure you want to delete Master Class?",
+      "api": "MasterClass/delete",
       "fieldsToSend": {
         "name": "_id",
         "value": "_id"
@@ -47,11 +42,11 @@
       "icon": "plus",
       "class": "btn-success",
       "type": "page",
-      "action": "createBanner"
+      "action": "createMasterClass"
     }
   ],
   "apiCall": {
-    "url": "Banner/search",
+    "url": "MasterClass/search",
     "params": "_id"
   }
 }

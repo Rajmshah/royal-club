@@ -1,14 +1,20 @@
 {
-  "title": "Banner",
-  "description": "List of Banner",
+  "title": "Press",
+  "description": "List of Press",
   "pageType": "view",
   "sendIdWithCreate": true,
   "urlFields": ["_id"],
   "fields": [
     {
-      "name": "Page Name",
+      "name": "Title",
       "isSort": "",
-      "tableRef": "pageName"
+      "tableRef": "title"
+    },
+    {
+      "name": "Date",
+      "isSort": "",
+      "tableRef": "date",
+      "type": "date"
     },
     {
       "name": "Status",
@@ -20,9 +26,9 @@
     {
       "name": "edit",
       "icon": "fa-pencil",
-      "buttonClass": "btn-primary m-right",
+      "buttonClass": "btn-primary",
       "type": "page",
-      "action": "editBanner",
+      "action": "editPress",
       "fieldsToSend": {
         "_id": "_id"
       }
@@ -30,11 +36,11 @@
     {
       "name": "delete",
       "icon": "fa-trash",
-      "buttonClass": "btn-danger m-left",
+      "buttonClass": "btn-danger",
       "type": "apiCallConfirm",
-      "title": "Delete Banner",
-      "content": "Are you sure you want to delete  Banner?",
-      "api": "Banner/delete",
+      "title": "Delete Press",
+      "content": "Are you sure you want to delete Press?",
+      "api": "Press/delete",
       "fieldsToSend": {
         "name": "_id",
         "value": "_id"
@@ -47,11 +53,11 @@
       "icon": "plus",
       "class": "btn-success",
       "type": "page",
-      "action": "createBanner"
+      "action": "createPress"
     }
   ],
   "apiCall": {
-    "url": "Banner/search",
+    "url": "Press/search",
     "params": "_id"
   }
 }

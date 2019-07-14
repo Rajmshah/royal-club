@@ -1,0 +1,48 @@
+{
+  "title": "Create User",
+  "name": "User",
+  "jsonPage": "viewUser",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["User"],
+  "fields": [
+    {
+      "name": "Mobile",
+      "type": "tags",
+      "tableRef": "mobile",
+      "placeholder": "Select Mobile",
+      "id": "mobile",
+      "validation": ["", "", ""],
+      "url": "",
+      "dropDownField": "",
+      "dropDownType": "single",
+      "onView": true,
+      "dropDown": []
+    }
+  ],
+  "action": [
+    {
+      "name": "submit",
+      "action": "submitUser",
+      "stateName": {
+        "page": "page",
+        "json": {
+          "id": "viewUser"
+        }
+      }
+    },
+    {
+      "name": "cancel",
+      "sideMenuRedirect": true,
+      "stateName": {
+        "page": "page",
+        "json": {
+          "id": "viewUser"
+        }
+      }
+    }
+  ],
+  "apiCall": {
+    "url": "User/save"
+  }
+}

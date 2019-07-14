@@ -1,0 +1,48 @@
+{
+  "title": "Enquiry Form",
+  "description": "List of Enquiry Form",
+  "pageType": "view",
+  "sendIdWithCreate": true,
+  "urlFields": ["_id"],
+  "fields": [
+    {
+      "name": "Name",
+      "isSort": "",
+      "tableRef": "name"
+    },
+    {
+      "name": "Email",
+      "isSort": "",
+      "tableRef": "email"
+    },
+    {
+      "name": "Mobile",
+      "isSort": "",
+      "tableRef": "mobile"
+    },
+    {
+      "name": "Query",
+      "isSort": "",
+      "tableRef": "query"
+    }
+  ],
+  "action": [
+    {
+      "name": "delete",
+      "icon": "fa-trash",
+      "buttonClass": "btn-danger",
+      "type": "apiCallConfirm",
+      "title": "Delete Enquiry Form",
+      "content": "Are you sure you want to delete Enquiry Form?",
+      "api": "EnquiryForm/delete",
+      "fieldsToSend": {
+        "name": "_id",
+        "value": "_id"
+      }
+    }
+  ],
+  "apiCall": {
+    "url": "EnquiryForm/search",
+    "params": "_id"
+  }
+}
