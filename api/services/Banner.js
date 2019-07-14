@@ -1,14 +1,27 @@
 var schema = new Schema({
-  banner: {
-    type: String
-  },
-  isWhole: {
-    type: Boolean
-  },
-  pageName: {
+  image: String,
+  title: String,
+  type: {
     type: String,
-    enum: ["Sponsor", "About"]
-  }
+    enum: [
+      "Club",
+      "Master Class",
+      "Academy",
+      "News & Update",
+      "Gallery",
+      "About Us",
+      "Contact Us"
+    ]
+  },
+  status: {
+    type: String,
+    enum: ["Enable", "Disable"]
+  },
+  linkType: {
+    type: String,
+    enum: ["Internal", "External"]
+  },
+  link: String
 });
 
 schema.plugin(deepPopulate, {});

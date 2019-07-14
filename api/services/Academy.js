@@ -15,29 +15,18 @@ var schema = new Schema({
       }
     }
   ],
-  adBlock: [
+  content1: {
+    type: String
+  },
+  content2: {
+    type: String
+  },
+  staff: [
     {
       image: String,
-      title: String,
-      type: {
-        type: String,
-        enum: ["Internal", "External"]
-      },
-      link: String,
-      status: {
-        type: String,
-        enum: ["Enable", "Disable"],
-        default: "Enable"
-      }
-    }
-  ],
-  gallery: [
-    {
-      image: String,
-      imageType: {
-        type: String,
-        enum: ["Image 285 x 300", "Image 570 x 300", "Image 570 x 600"]
-      },
+      name: String,
+      designation: String,
+      description: String,
       status: {
         type: String,
         enum: ["Enable", "Disable"],
@@ -50,7 +39,7 @@ var schema = new Schema({
 schema.plugin(deepPopulate, {});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
-module.exports = mongoose.model("Homepage", schema);
+module.exports = mongoose.model("Academy", schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {};
