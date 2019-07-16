@@ -53,6 +53,8 @@ module.exports = [
   "frontend/views/content/club/club.js",
   "frontend/views/content/contact-us/contact-us.js",
   "frontend/views/content/gallery/gallery.js",
+  "frontend/views/content/gallery/albums.js",
+  "frontend/views/content/gallery/photos.js",
   "frontend/views/content/home/home.js",
   "frontend/views/content/master-class/master-class.js",
   "frontend/views/content/news-updates/news-updates.js"

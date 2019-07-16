@@ -172,6 +172,36 @@ $dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175) !default;
 }
 
 @font-face {
+  font-family: "TitilliumWeb-Light";
+  src: url("../fonts/TitilliumWeb-Light.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Titillium Web SemiBold";
+  src: url("../fonts/TitilliumWeb-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Titillium Web Bold";
+  src: url("../fonts/TitilliumWeb-Bold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Titillium Web Regular";
+  src: url("../fonts/TitilliumWeb-Regular.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Titillium Web Light";
+  src: url("../fonts/TitilliumWeb-Light.ttf");
+  font-weight: 600;
+}
+
+@font-face {
   font-family: "FontAwesome";
   src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"),
     url("../fonts/fontawesome-webfont.woff") format("woff"),
@@ -186,6 +216,30 @@ $dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175) !default;
 .fal,
 .fab {
   font-family: "FontAwesome";
+}
+
+.titillium-web-light {
+  font-family: "Titillium Web Light";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.titillium-web-regular {
+  font-family: "Titillium Web Regular";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.titillium-web-semiBold {
+  font-family: "Titillium Web SemiBold";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.titillium-web-bold {
+  font-family: "Titillium Web Bold";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .opensans-semibold {
@@ -243,7 +297,7 @@ $dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175) !default;
 }
 
 body {
-  font-family: "Opensans Regular" !important;
+  font-family: "Titillium Web Regular" !important;
 }
 
 img.loading {
@@ -287,6 +341,7 @@ a,
   border-radius: 0;
   box-shadow: none;
   transition: unset;
+  @extend .titillium-web-regular;
 }
 
 .form-control:focus {
@@ -432,6 +487,14 @@ header {
 
 .pt-6 {
   padding-top: 6.6rem;
+}
+
+.font-32 {
+  font-size: 2rem;
+}
+
+.font-30 {
+  font-size: 1.875rem;
 }
 
 .font-24 {

@@ -1,0 +1,26 @@
+.subhead {
+  span {
+    border-bottom-width: 2px !important;
+  }
+}
+
+.ls-1 {
+  letter-spacing: 1px;
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+.ad-holder:hover,
+.photo-holder:hover {
+  img {
+    transform: scale(1.02);
+  }
+}
+
+// .ad-block {
+//   bottom: 0;
+//   position: fixed;
+//   width: 100%;
+// }

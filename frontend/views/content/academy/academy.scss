@@ -1,0 +1,10 @@
+.banners-img {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
+    background-size: contain;
+    transform: translateY(-50%);
+  }
+}

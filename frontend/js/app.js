@@ -50,6 +50,16 @@ myApp.config(function(
       templateUrl: templateURL,
       controller: "GalleryCtrl"
     })
+    .state("gallery-albums", {
+      url: "/gallery/albums",
+      templateUrl: templateURL,
+      controller: "GalleryAlbumsCtrl"
+    })
+    .state("gallery-photos", {
+      url: "/gallery/albums/photos",
+      templateUrl: templateURL,
+      controller: "GalleryPhotosCtrl"
+    })
     .state("master-class", {
       url: "/master-class",
       templateUrl: templateURL,
