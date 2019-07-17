@@ -1,0 +1,80 @@
+<section class="contact-us py-5 bg-color text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div
+          class="text-center text-uppercase oswald-bold main-head font-32 mb-5"
+        >
+          <span class="border-bottom border-dark px-2">
+            Contact us
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 mx-auto mb-5">
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id=""
+              ng-model="name"
+              placeholder="Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="tel"
+              class="form-control"
+              name="phone"
+              maxlength="10"
+              id=""
+              only-digits
+              ng-model="mobile"
+              placeholder="Mobile"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id=""
+              ng-model="email"
+              placeholder="Email ID"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control no-resize"
+              name=""
+              id=""
+              maxlength="300"
+              rows="8"
+              ng-model="query"
+              ng-draggable="false"
+              placeholder="Only upto 300 words"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <div class="submit text-center">
+              <div class="btn btn-light">Submit</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="google-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.540925265231!2d72.90482525007553!3d19.08391148701997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c62c49aa93a1%3A0x8517777532599697!2sUpashray+Ln%2C+Saibaba+Nagar%2C+Pant+Nagar%2C+Ghatkopar+East%2C+Mumbai%2C+Maharashtra+400077!5e0!3m2!1sen!2sin!4v1563389717247!5m2!1sen!2sin"
+      width="100%"
+      height="400px"
+      frameborder="0"
+      style="border:0"
+      allowfullscreen
+    ></iframe>
+  </div>
+</section>
