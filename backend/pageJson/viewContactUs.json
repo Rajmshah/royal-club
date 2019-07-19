@@ -1,25 +1,14 @@
 {
-  "title": "Banner",
-  "description": "List of Banner",
+  "title": "Contact Us",
+  "description": "List of Contact Us",
   "pageType": "view",
   "sendIdWithCreate": true,
   "urlFields": ["_id"],
   "fields": [
     {
-      "name": "Banner",
+      "name": "Address",
       "isSort": "",
-      "tableRef": "banner",
-      "type": "image"
-    },
-    {
-      "name": "Is Whole",
-      "isSort": "",
-      "tableRef": "isWhole"
-    },
-    {
-      "name": "Page Name",
-      "isSort": "",
-      "tableRef": "pageName"
+      "tableRef": "address"
     }
   ],
   "action": [
@@ -28,7 +17,7 @@
       "icon": "fa-pencil",
       "buttonClass": "btn-primary m-right",
       "type": "page",
-      "action": "editBanner",
+      "action": "editContactUs",
       "fieldsToSend": {
         "_id": "_id"
       }
@@ -38,9 +27,9 @@
       "icon": "fa-trash",
       "buttonClass": "btn-danger m-left",
       "type": "apiCallConfirm",
-      "title": "Delete Banner",
-      "content": "Are you sure you want to delete  Banner?",
-      "api": "Banner/delete",
+      "title": "Delete Contact Us",
+      "content": "Are you sure you want to delete Contact Us?",
+      "api": "Contact/delete",
       "fieldsToSend": {
         "name": "_id",
         "value": "_id"
@@ -57,7 +46,7 @@
     }
   ],
   "apiCall": {
-    "url": "Banner/search",
+    "url": "Contact/search",
     "params": "_id"
   }
 }

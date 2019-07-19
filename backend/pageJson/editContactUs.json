@@ -1,33 +1,63 @@
 {
-  "title": "Edit Banner",
-  "name": "Banner",
-  "jsonPage": "viewBanner",
-  "desciption": "(Upload image after compressing it as much as possible. For faster loading.)",
+  "title": "Edit Contact Us",
+  "name": "Contact Us",
+  "jsonPage": "viewContactUs",
   "pageType": "edit",
   "urlFields": ["_id"],
   "fields": [
     {
+      "name": "Map Link",
+      "type": "text",
+      "tableRef": "mapLink",
+      "placeholder": "Enter Map Link",
+      "id": "mapLink",
+      "validation": ["", "trim", ""],
+      "url": ""
+    },
+    {
+      "name": "Address",
+      "type": "textarea",
+      "tableRef": "address",
+      "placeholder": "Enter Address",
+      "id": "address",
+      "validation": ["", "trim", ""],
+      "url": ""
+    },
+    {
       "name": "Mobile",
       "type": "tags",
       "tableRef": "mobile",
-      "placeholder": "Select Mobile",
+      "placeholder": "Enter Mobile",
       "id": "mobile",
-      "validation": ["", "", ""],
+      "validation": ["", "trim", ""],
+      "onView": true,
       "url": "",
       "dropDownField": "",
-      "dropDownType": "single",
+      "dropDownType": "multiple",
+      "dropDown": ""
+    },
+    {
+      "name": "Email",
+      "type": "tags",
+      "tableRef": "email",
+      "placeholder": "Enter Email",
+      "id": "email",
+      "validation": ["", "trim", ""],
       "onView": true,
-      "dropDown": []
+      "url": "",
+      "dropDownField": "",
+      "dropDownType": "multiple",
+      "dropDown": ""
     }
   ],
   "action": [
     {
       "name": "submit",
-      "action": "submitBanner",
+      "action": "submitContactUs",
       "stateName": {
         "page": "page",
         "json": {
-          "id": "viewBanner"
+          "id": "viewContactUs"
         }
       }
     },
@@ -37,17 +67,17 @@
       "stateName": {
         "page": "page",
         "json": {
-          "id": "viewBanner"
+          "id": "viewContactUs"
         }
       }
     }
   ],
   "apiCall": {
-    "url": "Banner/save",
+    "url": "Contact/save",
     "params": "_id"
   },
   "preApi": {
-    "url": "Banner/getOne",
+    "url": "Contact/getOne",
     "params": "_id"
   }
 }

@@ -1,4 +1,4 @@
-myApp.controller("HomePageTableCtrl", function(
+myApp.controller("AboutTableCtrl", function(
   $scope,
   TemplateService,
   NavigationService,
@@ -8,8 +8,8 @@ myApp.controller("HomePageTableCtrl", function(
   $stateParams
 ) {
   //Used to name the .html file
-  $scope.template = TemplateService.changecontent("homepage/table");
-  $scope.menutitle = NavigationService.makeactive("Home Page");
+  $scope.template = TemplateService.changecontent("about/table");
+  $scope.menutitle = NavigationService.makeactive("About");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   // CODE START
@@ -33,7 +33,7 @@ myApp.controller("HomePageTableCtrl", function(
 
   // VIEW TABLE
   $scope.viewTable = function() {
-    $scope.url = "Homepage/search";
+    $scope.url = "About/search";
     $scope.formData.page = $scope.formData.page++;
     NavigationService.apiCall($scope.url, $scope.formData, function(data) {
       // console.log("data.value", data);
@@ -47,14 +47,14 @@ myApp.controller("HomePageTableCtrl", function(
 
   // DELETE
   $scope.crudService = crudService;
-  var url = "Homepage/delete";
+  var url = "About/delete";
   $scope.confirmDelete = function(data) {
     crudService.confirmDelete(data, url, $scope);
   };
   // DELETE END
   // CODE END
 });
-myApp.controller("HomePageDetailsCtrl", function(
+myApp.controller("AboutDetailsCtrl", function(
   $scope,
   TemplateService,
   NavigationService,
@@ -64,71 +64,37 @@ myApp.controller("HomePageDetailsCtrl", function(
   $stateParams
 ) {
   //Used to name the .html file
-  $scope.template = TemplateService.changecontent("homepage/detail");
-  $scope.menutitle = NavigationService.makeactive("Home Page");
+  $scope.template = TemplateService.changecontent("about/detail");
+  $scope.menutitle = NavigationService.makeactive("About");
   TemplateService.title = $scope.menutitle;
   $scope.navigation = NavigationService.getnav();
   // VARIABLES
-  var url = "Homepage";
+  var url = "About";
   $scope.formData = {};
   // VARIABLES END
 
   // GALLERY ADD
   $scope.add = function(formData, type) {
-    if (!formData.banner) {
-      formData.banner = [];
-    }
-    if (!formData.gallery) {
-      formData.gallery = [];
-    }
-    if (!formData.adBlock) {
-      formData.adBlock = [];
+    if (!formData.team) {
+      formData.team = [];
     }
     if (!formData) {
-      if (type === "banner") {
-        $scope.formData.banner.push({
+      if (type === "team") {
+        $scope.formData.team.push({
           image: "",
-          title: "",
-          link: "",
-          linkType: "Internal",
-          status: "Enable"
-        });
-      } else if (type === "adBlock") {
-        $scope.formData.adBlock.push({
-          image: "",
-          title: "",
-          link: "",
-          linkType: "Internal",
-          status: "Enable"
-        });
-      } else if (type === "gallery") {
-        $scope.formData.gallery.push({
-          image: "",
-          imageType: "",
+          name: "",
+          description: "",
+          designation: "",
           status: "Enable"
         });
       }
     } else {
-      if (type === "banner") {
-        formData.banner.push({
+      if (type === "team") {
+        formData.team.push({
           image: "",
-          title: "",
-          link: "",
-          linkType: "Internal",
-          status: "Enable"
-        });
-      } else if (type === "adBlock") {
-        formData.adBlock.push({
-          image: "",
-          title: "",
-          link: "",
-          linkType: "Internal",
-          status: "Enable"
-        });
-      } else if (type === "gallery") {
-        formData.gallery.push({
-          image: "",
-          imageType: "",
+          name: "",
+          description: "",
+          designation: "",
           status: "Enable"
         });
       }
@@ -144,7 +110,7 @@ myApp.controller("HomePageDetailsCtrl", function(
 
   // SAVE FUNCTION
 
-  var state = "homepage";
+  var state = "about";
   $scope.saveData = function(data) {
     crudService.saveData(data, url, state);
   };
@@ -160,8 +126,6 @@ myApp.controller("HomePageDetailsCtrl", function(
       }
     });
   } else {
-    $scope.formData.banner = [];
-    $scope.formData.adBlock = [];
-    $scope.formData.gallery = [];
+    $scope.formData.team = [];
   }
 });

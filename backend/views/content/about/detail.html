@@ -1,0 +1,162 @@
+<!-- Top Bar Chart -->
+<div class="heading-sec">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 column">
+                <div class="heading-profile">
+                    <h2>{{title}} About</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget">
+                    <div class="form-elements-sec">
+                        <form name="detailChampionsform" role="form" class="sec">
+                            <div class="row">
+                               
+                                <!-- Teams -->
+                                <div class="col-md-12">
+                                    <div class="form-group text-center">
+                                        <label>Teams</label>
+                                    </div>
+                                    <div class="form-group text-right">
+                                        <button class="btn btn-primary" ng-click="add(formData,'team')">Add</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group table-responsive table-font reduce-tablepadding">
+                                        <table class="table table-striped ">
+                                            <thead>
+                                                <th>
+                                                    <div>
+                                                        Sr.no
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div>
+                                                        Name
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div>
+                                                        Image (400 x 400)
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div>
+                                                        Designation
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div>
+                                                        Description
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div>
+                                                        Status
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div>
+                                                        Action
+                                                    </div>
+                                                </th>
+                                            </thead>
+                                            <tbody class="">
+                                                <tr ng-repeat="teamList in formData.team track by $index">
+                                                    <td>
+                                                        <div class="text-center">
+                                                            {{$index + 1}}
+                                                        </div>
+                                                    </td>
+                                                            <td>
+                                                                <div class="text-center">
+                                                                    <input type="text" class="form-control" ng-model="teamList.name" placeholder="Enter Name">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="text-center academy-gallery">
+                                                                    <upload-image ng-model="teamList.image"></upload-image>
+                                                                </div>
+                                                            </td>
+                                                                                <td>
+                                                                                    <div class="text-center">
+                                                                                        <input type="text" class="form-control" ng-model="teamList.designation" placeholder="Enter Designation">
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                        <div class="text-center">
+                                                                                            <textarea  class="form-control" ng-model="teamList.description" placeholder="Enter Description"></textarea>
+                                                                                        </div>
+                                                                                    </td>
+                                                    <td>
+                                                        <div class="text-center">
+                                                            <select name="status" id="status" ng-model="teamList.status" class="form-control">
+                                                                <option value="Enable">Enable</option>
+                                                                <option value="Disable">Disable</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="text-center">
+                                                            <button class="btn btn-danger" ng-click="deleteAdded($index,'team')">Delete</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Teams END -->
+    
+                                <!-- Content 1 -->
+                                <div class="col-md-12">
+                                    <div class="form-group text-center">
+                                        <label>Content 1</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                            <text-angular
+                                            ng-model="formData.content1"
+                                            name="Content 1"
+                                          ></text-angular>
+                                    </div>
+                                </div>
+                                <!-- Content 1  END -->
+    
+                                <!-- Content 2 -->
+                                <div class="col-md-12">
+                                    <div class="form-group text-center">
+                                        <label>Content 2</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                            <text-angular
+                                            ng-model="formData.content2"
+                                            name="Content 2"
+                                          ></text-angular>
+                                    </div>
+                                </div>
+                                <!-- Content 2 END -->
+    
+                                <!-- BUTTON -->
+                                <div class="col-md-12">
+                                    <div class="text-center mt20 odd-even-button">
+                                        <button class="btn btn-default" ng-click="saveData(formData)">Save</button>
+                                        <button class="btn btn-default" ui-sref="about">Cancel</button>
+                                    </div>
+                                </div>
+                                <!-- BUTTON END -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

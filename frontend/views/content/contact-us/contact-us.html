@@ -1,13 +1,78 @@
-<section class="contact-us py-5 bg-color text-white">
+<section class="contact-us my-5 bg-color text-white">
+  <div class="banners-img" ng-if="banner.banner">
+    <img
+      ng-src="{{ banner.banner | uploadpath }}"
+      alt="{{ banner.name }} Banner"
+      class="img-responsive"
+    />
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div
           class="text-center text-uppercase oswald-bold main-head font-32 mb-5"
         >
-          <span class="border-bottom border-dark px-2">
+          <span class="border-bottom border-light px-2">
             Contact us
           </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="text-center font-24 mt-3 mb-5">
+          <em>Get in touch with us!</em>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8 mx-auto  mb-5">
+        <div class="row no-gutters">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="mb-4 text-center border-right border-light px-2">
+              <div class="">
+                <i class="fas fa-mobile"></i>
+              </div>
+              <div class="">
+                Phone
+              </div>
+              <div class="">
+                <div class="">
+                  phone +919833930331
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="mb-4 text-center border-right border-light px-2">
+              <div class="">
+                <i class="fas fa-map-marker"></i>
+              </div>
+              <div class="">
+                Address
+              </div>
+              <div class="">
+                <div class="">
+                  Ghatkopar East
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="mb-4 text-center px-2">
+              <div class="">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="">
+                Email
+              </div>
+              <div class="">
+                <div class="">
+                  raj@wohlig.com
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

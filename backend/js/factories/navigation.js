@@ -12,6 +12,12 @@ myApp.factory("NavigationService", function($http) {
       icon: "phone"
     },
     {
+      name: "About",
+      classis: "activeColor",
+      sref: "#!/about",
+      icon: "phone"
+    },
+    {
       name: "Banner",
       classis: "activeColor",
       sref: "#!/page/viewBanner//",

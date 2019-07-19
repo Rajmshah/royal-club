@@ -1,33 +1,64 @@
 {
-  "title": "Create User",
-  "name": "User",
-  "jsonPage": "viewUser",
+  "title": "Create Contact Us",
+  "name": "Contact Us",
+  "jsonPage": "viewContactUs",
   "desciption": "",
   "pageType": "create",
-  "urlFields": ["User"],
+  "urlFields": ["Contact Us"],
   "fields": [
+    {
+      "name": "Map Link",
+      "type": "text",
+      "tableRef": "mapLink",
+      "placeholder": "Enter Map Link",
+      "id": "mapLink",
+      "validation": ["", "trim", ""],
+      "url": ""
+    },
+    {
+      "name": "Address",
+      "type": "textarea",
+      "tableRef": "address",
+      "placeholder": "Enter Address",
+      "id": "address",
+      "validation": ["", "trim", ""],
+      "url": ""
+    },
     {
       "name": "Mobile",
       "type": "tags",
       "tableRef": "mobile",
-      "placeholder": "Select Mobile",
+      "placeholder": "Enter Mobile",
       "id": "mobile",
-      "validation": ["", "", ""],
+      "validation": ["", "trim", ""],
+      "onView": true,
       "url": "",
       "dropDownField": "",
-      "dropDownType": "single",
+      "dropDownType": "multiple",
+      "dropDown": ""
+    },
+    {
+      "name": "Email",
+      "type": "tags",
+      "tableRef": "email",
+      "placeholder": "Enter Email",
+      "id": "email",
+      "validation": ["", "trim", ""],
       "onView": true,
-      "dropDown": []
+      "url": "",
+      "dropDownField": "",
+      "dropDownType": "multiple",
+      "dropDown": ""
     }
   ],
   "action": [
     {
       "name": "submit",
-      "action": "submitUser",
+      "action": "submitContactUs",
       "stateName": {
         "page": "page",
         "json": {
-          "id": "viewUser"
+          "id": "viewContactUs"
         }
       }
     },
@@ -37,12 +68,12 @@
       "stateName": {
         "page": "page",
         "json": {
-          "id": "viewUser"
+          "id": "viewContactUs"
         }
       }
     }
   ],
   "apiCall": {
-    "url": "User/save"
+    "url": "Contact/save"
   }
 }

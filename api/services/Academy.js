@@ -3,7 +3,7 @@ var schema = new Schema({
     {
       image: String,
       title: String,
-      type: {
+      linkType: {
         type: String,
         enum: ["Internal", "External"]
       },

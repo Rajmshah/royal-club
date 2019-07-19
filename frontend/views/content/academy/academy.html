@@ -1,5 +1,13 @@
 <!--Banner-->
 <section class="academy my-5">
+  <div class="banners-img" ng-if="banner.banner">
+    <img
+      ng-src="{{ banner.banner | uploadpath }}"
+      alt="{{ banner.name }} Banner"
+      class="img-responsive"
+    />
+  </div>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">

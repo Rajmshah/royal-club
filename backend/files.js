@@ -58,7 +58,8 @@ module.exports = [
   // Contorllers
   "backend/js/controllers/controller.js",
   // 'backend/js/controllers/auction.js',
-  "backend/js/controllers/homepage.js"
+  "backend/js/controllers/homepage.js",
+  "backend/js/controllers/about.js"
   // 'backend/js/controllers/categorylist.js',
   // 'backend/js/controllers/categorydetails.js',
   // 'backend/js/controllers/teamlist.js',
