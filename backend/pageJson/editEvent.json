@@ -1,32 +1,41 @@
 {
-  "title": "Edit Achievement",
-  "name": "Achievement",
-  "jsonPage": "viewAchievement",
+  "title": "Edit Event",
+  "name": "Event",
+  "jsonPage": "viewEvent",
   "description": "",
   "pageType": "edit",
   "urlFields": ["_id"],
   "fields": [
     {
-      "name": "Title",
+      "name": "Event Name",
       "type": "text",
-      "tableRef": "title",
-      "placeholder": "Enter Title",
-      "id": "title",
+      "tableRef": "eventName",
+      "placeholder": "Enter Event Name",
+      "id": "eventName",
       "validation": ["required", "trim", "unique"],
       "url": ""
     },
     {
-      "name": "Date",
+      "name": "eventDate",
       "type": "date",
-      "tableRef": "date",
-      "placeholder": "Enter Date",
-      "id": "date",
+      "tableRef": "eventDate",
+      "placeholder": "Enter Event Date",
+      "id": "eventDate",
+      "validation": ["required", "trim", "unique"],
+      "url": ""
+    },
+    {
+      "name": "Venue",
+      "type": "text",
+      "tableRef": "venue",
+      "placeholder": "Enter Venue",
+      "id": "venue",
       "validation": ["required", "trim", "unique"],
       "url": ""
     },
     {
       "name": "Description",
-      "type": "wysiwyg",
+      "type": "textarea",
       "tableRef": "description",
       "placeholder": "Enter Description",
       "id": "description",
@@ -57,16 +66,38 @@
       "dropDownType": "single",
       "onView": true,
       "dropDown": ["Enable", "Disable"]
+    },
+    {
+      "name": "Event Status",
+      "type": "tags",
+      "tableRef": "eventStatus",
+      "placeholder": "Select Event Status",
+      "id": "eventStatus",
+      "validation": ["", "trim", ""],
+      "url": "",
+      "dropDownField": "",
+      "dropDownType": "single",
+      "onView": true,
+      "dropDown": ["Pending", "Completed"]
     }
+    // {
+    //   "name": "Event Gallery",
+    //   "type": "selectFromTable",
+    //   "tableRef": "eventGallery",
+    //   "searchApi": "searchCall",
+    //   "placeholder": "Enter Event Gallery",
+    //   "id": "eventGallery",
+    //   "url": "Gallery/search"
+    // }
   ],
   "action": [
     {
       "name": "submit",
-      "action": "submitAchievement",
+      "action": "submitEvent",
       "stateName": {
         "page": "page",
         "json": {
-          "id": "viewAchievement"
+          "id": "viewEvent"
         }
       }
     },
@@ -76,17 +107,17 @@
       "stateName": {
         "page": "page",
         "json": {
-          "id": "viewAchievement"
+          "id": "viewEvent"
         }
       }
     }
   ],
   "apiCall": {
-    "url": "Achievement/save",
+    "url": "Event/save",
     "params": "_id"
   },
   "preApi": {
-    "url": "Achievement/getOne",
+    "url": "Event/getOne",
     "params": "_id"
   }
 }

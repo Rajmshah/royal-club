@@ -1,0 +1,133 @@
+{
+  "title": "Create Gallery",
+  "name": "Gallery",
+  "jsonPage": "viewGallery",
+  "desciption": "(Upload image after compressing it as much as possible. For faster loading.)",
+  "pageType": "create",
+  "urlFields": ["Gallery"],
+  "fields": [
+    {
+      "name": "Media Type",
+      "type": "tags",
+      "tableRef": "mediaType",
+      "placeholder": "Select Media Type",
+      "id": "pageName",
+      "validation": ["", "", ""],
+      "url": "",
+      "dropDownField": "",
+      "dropDownType": "single",
+      "onView": true,
+      "dropDown": ["Photo", "Video"]
+    },
+    {
+      "name": "Title",
+      "type": "text",
+      "tableRef": "title",
+      "placeholder": "Enter Title",
+      "id": "title",
+      "validation": ["", "trim", "unique"],
+      "url": ""
+    },
+    {
+      "name": "Image Link (For Image Only)",
+      "type": "image",
+      "tableRef": "mediaLink",
+      "size": "1920 x 600",
+      "placeholder": "Upload Image",
+      "id": "mediaLink",
+      "view": true,
+      "disabled": true,
+      "validation": ["", "", ""],
+      "url": ""
+    },
+    {
+      "name": "Video Link (For Video Only)",
+      "type": "text",
+      "tableRef": "mediaLink",
+      "size": "1920 x 600",
+      "placeholder": "Enter Video Link",
+      "id": "videoLink",
+      "view": true,
+      "disabled": true,
+      "validation": ["", "", ""],
+      "url": ""
+    },
+    {
+      "name": "Video Thumbnail",
+      "type": "image",
+      "tableRef": "videoThumbnail",
+      "size": "1920 x 600",
+      "placeholder": "Upload Image",
+      "id": "videoThumbnail",
+      "view": true,
+      "disabled": true,
+      "validation": ["", "", ""],
+      "url": ""
+    },
+    {
+      "name": "Folder Name",
+      "type": "text",
+      "tableRef": "folderName",
+      "placeholder": "Enter Folder Name",
+      "id": "folderName",
+      "validation": ["required", "trim", "unique"],
+      "url": ""
+    },
+    {
+      "name": "Order",
+      "type": "number",
+      "tableRef": "order",
+      "placeholder": "Enter Order",
+      "id": "order",
+      "validation": ["required", "trim", "unique"],
+      "url": ""
+    },
+    {
+      "name": "Event Date",
+      "type": "date",
+      "tableRef": "eventDate",
+      "placeholder": "Enter Event Date",
+      "id": "date",
+      "validation": ["required", "trim", "unique"],
+      "url": ""
+    },
+    {
+      "name": "Status",
+      "type": "tags",
+      "tableRef": "status",
+      "placeholder": "Select Status",
+      "id": "status",
+      "validation": ["", "trim", ""],
+      "url": "",
+      "dropDownField": "",
+      "dropDownType": "single",
+      "onView": true,
+      "dropDown": ["Enable", "Disable"]
+    }
+  ],
+  "action": [
+    {
+      "name": "submit",
+      "action": "submitGallery",
+      "stateName": {
+        "page": "page",
+        "json": {
+          "id": "viewGallery"
+        }
+      }
+    },
+    {
+      "name": "cancel",
+      "sideMenuRedirect": true,
+      "stateName": {
+        "page": "page",
+        "json": {
+          "id": "viewGallery"
+        }
+      }
+    }
+  ],
+  "apiCall": {
+    "url": "Gallery/save"
+  }
+}

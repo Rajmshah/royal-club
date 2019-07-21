@@ -2,7 +2,13 @@ var schema = new Schema({
   folderName: {
     type: String
   },
+  title: {
+    type: String
+  },
   mediaLink: {
+    type: String
+  },
+  videoLink: {
     type: String
   },
   mediaType: {

@@ -1,0 +1,62 @@
+{
+  "title": "Gallery",
+  "description": "List of Gallery",
+  "pageType": "view",
+  "sendIdWithCreate": true,
+  "urlFields": ["_id"],
+  "fields": [
+    {
+      "name": "Folder Name",
+      "isSort": "",
+      "tableRef": "folderName"
+    },
+    {
+      "name": "Media Type",
+      "isSort": "",
+      "tableRef": "mediaType"
+    },
+    {
+      "name": "Status",
+      "isSort": "",
+      "tableRef": "status"
+    }
+  ],
+  "action": [
+    {
+      "name": "edit",
+      "icon": "fa-pencil",
+      "buttonClass": "btn-primary m-right",
+      "type": "page",
+      "action": "editGallery",
+      "fieldsToSend": {
+        "_id": "_id"
+      }
+    },
+    {
+      "name": "delete",
+      "icon": "fa-trash",
+      "buttonClass": "btn-danger m-left",
+      "type": "apiCallConfirm",
+      "title": "Delete Gallery",
+      "content": "Are you sure you want to delete  Gallery?",
+      "api": "Gallery/delete",
+      "fieldsToSend": {
+        "name": "_id",
+        "value": "_id"
+      }
+    }
+  ],
+  "button": [
+    {
+      "name": "Create",
+      "icon": "plus",
+      "class": "btn-success",
+      "type": "page",
+      "action": "createGallery"
+    }
+  ],
+  "apiCall": {
+    "url": "Gallery/search",
+    "params": "_id"
+  }
+}

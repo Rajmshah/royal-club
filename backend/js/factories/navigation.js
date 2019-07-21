@@ -24,6 +24,24 @@ myApp.factory("NavigationService", function($http) {
       icon: "phone"
     },
     {
+      name: "Academy",
+      classis: "activeColor",
+      sref: "#!/academy",
+      icon: "phone"
+    },
+    {
+      name: "Master Class",
+      classis: "activeColor",
+      sref: "#!/page/viewMasterClass//",
+      icon: "phone"
+    },
+    {
+      name: "Event",
+      classis: "activeColor",
+      sref: "#!/page/viewEvent//",
+      icon: "phone"
+    },
+    {
       name: "Enquiry Form",
       classis: "activeColor",
       sref: "#!/page/viewEnquiryForm//",
@@ -36,12 +54,6 @@ myApp.factory("NavigationService", function($http) {
       icon: "phone"
     },
     {
-      name: "Master Class",
-      classis: "activeColor",
-      sref: "#!/page/viewMasterClass//",
-      icon: "phone"
-    },
-    {
       name: "Press",
       classis: "activeColor",
       sref: "#!/page/viewPress//",
@@ -51,6 +63,12 @@ myApp.factory("NavigationService", function($http) {
       name: "Achievement",
       classis: "activeColor",
       sref: "#!/page/viewAchievement//",
+      icon: "phone"
+    },
+    {
+      name: "Gallery",
+      classis: "activeColor",
+      sref: "#!/page/viewGallery//",
       icon: "phone"
     },
     {

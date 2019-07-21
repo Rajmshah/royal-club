@@ -48,6 +48,19 @@ myApp.config(function(
       controller: "AboutDetailsCtrl"
     })
 
+    .state("academy", {
+      url: "/academy",
+      templateUrl: "views/template.html",
+      controller: "AcademyTableCtrl"
+    })
+
+    //detail home page
+    .state("detailacademy", {
+      url: "/detailacademy/:id",
+      templateUrl: "views/template.html",
+      controller: "AcademyDetailsCtrl"
+    })
+
     .state("login", {
       url: "/login",
       templateUrl: "views/login.html",

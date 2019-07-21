@@ -1,0 +1,63 @@
+{
+  "title": "Event",
+  "description": "List of Event",
+  "pageType": "view",
+  "sendIdWithCreate": true,
+  "urlFields": ["_id"],
+  "fields": [
+    {
+      "name": "Event Name",
+      "isSort": "",
+      "tableRef": "eventName"
+    },
+    {
+      "name": "Event Date",
+      "isSort": "",
+      "tableRef": "eventDate",
+      "type": "date"
+    },
+    {
+      "name": "Status",
+      "isSort": "",
+      "tableRef": "status"
+    }
+  ],
+  "action": [
+    {
+      "name": "edit",
+      "icon": "fa-pencil",
+      "buttonClass": "btn-primary m-right",
+      "type": "page",
+      "action": "editEvent",
+      "fieldsToSend": {
+        "_id": "_id"
+      }
+    },
+    {
+      "name": "delete",
+      "icon": "fa-trash",
+      "buttonClass": "btn-danger m-left",
+      "type": "apiCallConfirm",
+      "title": "Delete Event",
+      "content": "Are you sure you want to delete Event?",
+      "api": "Event/delete",
+      "fieldsToSend": {
+        "name": "_id",
+        "value": "_id"
+      }
+    }
+  ],
+  "button": [
+    {
+      "name": "Create",
+      "icon": "plus",
+      "class": "btn-success",
+      "type": "page",
+      "action": "createEvent"
+    }
+  ],
+  "apiCall": {
+    "url": "Event/search",
+    "params": "_id"
+  }
+}
