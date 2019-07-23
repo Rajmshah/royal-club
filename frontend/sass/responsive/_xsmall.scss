@@ -1,0 +1,19 @@
+@include media-breakpoint-only(xs) {
+  //Header
+  .navbar-nav {
+    width: 75%;
+  }
+  //Header End
+  //Gallery
+  .sm-padding {
+    padding: 0 15px;
+  }
+  //Gallery End
+  //Master Class
+  .master-class-tabs {
+    a {
+      padding: 0 5px !important;
+    }
+  }
+  //Master Class End
+}

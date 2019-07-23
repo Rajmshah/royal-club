@@ -1,9 +1,37 @@
 /* Breakpoint for medium viewport */
 
 @include media-breakpoint-down(sm) {
+  //For All
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+  .mt-5 {
+    margin-bottom: 2rem !important;
+  }
+  .my-5 {
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important;
+  }
+  .font-24,
+  .font-18 {
+    font-size: 1rem !important;
+  }
+  .font-32 {
+    font-size: 1.5rem;
+  }
+  //For All End
   //Header
   .navbar-nav {
     width: 50%;
   }
   //Header End
+  //About Us & Academy
+  .team-brief {
+    position: unset !important;
+    padding: 1rem 0 0 !important;
+  }
+  .team-image-holder {
+    margin: 0 auto;
+  }
+  //About Us & Academy End
 }
