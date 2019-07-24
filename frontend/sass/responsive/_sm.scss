@@ -12,12 +12,15 @@
     margin-bottom: 2rem !important;
     margin-top: 2rem !important;
   }
-  .font-24,
-  .font-18 {
+  .font-18,
+  .font-24 {
     font-size: 1rem !important;
   }
   .font-32 {
     font-size: 1.5rem;
+  }
+  .font-30 {
+    font-size: 1.25rem;
   }
   //For All End
   //Header
@@ -34,4 +37,11 @@
     margin: 0 auto;
   }
   //About Us & Academy End
+  //Home
+  .gradient {
+    -webkit-box-shadow: inset 0px -60px 50px 0px rgba(22, 22, 22, 1);
+    -moz-box-shadow: inset 0px -60px 50px 0px rgba(22, 22, 22, 1);
+    box-shadow: inset 0px -60px 50px 0px rgba(22, 22, 22, 1);
+  }
+  //Home End
 }

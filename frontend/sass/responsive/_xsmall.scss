@@ -1,4 +1,9 @@
 @include media-breakpoint-only(xs) {
+  //For All
+  .font-30 {
+    font-size: 1rem;
+  }
+  //For All End
   //Header
   .navbar-nav {
     width: 75%;

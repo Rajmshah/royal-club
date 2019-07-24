@@ -12689,6 +12689,31 @@ a.text-dark:hover, a.text-dark:focus {
   src: url("../fonts/Oswald-Bold.ttf"); }
 
 @font-face {
+  font-family: "TitilliumWeb-Light";
+  src: url("../fonts/TitilliumWeb-Light.ttf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: "Titillium Web SemiBold";
+  src: url("../fonts/TitilliumWeb-SemiBold.ttf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: "Titillium Web Bold";
+  src: url("../fonts/TitilliumWeb-Bold.ttf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: "Titillium Web Regular";
+  src: url("../fonts/TitilliumWeb-Regular.ttf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: "Titillium Web Light";
+  src: url("../fonts/TitilliumWeb-Light.ttf");
+  font-weight: 600; }
+
+@font-face {
   font-family: "FontAwesome";
   src: url("../fonts/fontawesome-webfont.eot") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype");
   font-weight: normal;
@@ -12700,6 +12725,32 @@ a.text-dark:hover, a.text-dark:focus {
 .fal,
 .fab {
   font-family: "FontAwesome"; }
+
+.titillium-web-light {
+  font-family: "Titillium Web Light";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.titillium-web-regular, .input-lg,
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn,
+.btn,
+.form-control {
+  font-family: "Titillium Web Regular";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.titillium-web-semiBold {
+  font-family: "Titillium Web SemiBold";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.titillium-web-bold, #tabs .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  font-family: "Titillium Web Bold";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .opensans-semibold {
   font-family: "Opensans Semibold";
@@ -12747,7 +12798,7 @@ a.text-dark:hover, a.text-dark:focus {
   -moz-osx-font-smoothing: grayscale; }
 
 body {
-  font-family: "Opensans Regular" !important; }
+  font-family: "Titillium Web Regular" !important; }
 
 img.loading {
   text-align: center;
@@ -12805,6 +12856,9 @@ a,
 
 .no-resize {
   resize: none; }
+
+.no-underline:hover {
+  text-decoration: none; }
 
 .form-invalid {
   color: #d9534f; }
@@ -12901,7 +12955,13 @@ header {
   margin: 15px 0 0; }
 
 .pt-6, .content {
-  padding-top: 6.6rem; }
+  padding-top: 6.5rem; }
+
+.font-32 {
+  font-size: 2rem; }
+
+.font-30 {
+  font-size: 1.875rem; }
 
 .font-24 {
   font-size: 1.5rem; }
@@ -12940,6 +13000,15 @@ header {
     font-size: 3rem;
     line-height: 1;
     color: #161616; }
+
+.banners-img .swiper-button-next,
+.banners-img .swiper-button-prev {
+  width: 30px;
+  height: 30px;
+  margin-top: 0;
+  background-size: contain;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 footer {
   background-color: #161616;
@@ -12981,7 +13050,7 @@ footer {
   .footerLists a:hover {
     color: #e1c7c7;
     text-decoration: none;
-    border-bottom: 1px solid rgba(229, 193, 0, 0.29); }
+    border-bottom: 2px solid rgba(229, 193, 0, 0.29); }
 
 .footerLists .listSeparator {
   float: right;
@@ -13049,6 +13118,71 @@ header {
 .subhead span {
   border-bottom-width: 2px !important; }
 
+.ls-1 {
+  letter-spacing: 1px; }
+
+.ls-2 {
+  letter-spacing: 2px; }
+
+.ad-holder:hover img,
+.photo-holder:hover img {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02); }
+
+.gradient {
+  bottom: 0;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 1;
+  width: 100%;
+  height: 160px;
+  text-align: center;
+  -webkit-box-shadow: inset 0px -90px 50px 0px #161616;
+  box-shadow: inset 0px -90px 50px 0px #161616; }
+
+.main-head span {
+  border-bottom-width: 3px !important; }
+
+.team-image-holder {
+  width: 200px; }
+
+.team-brief {
+  top: 0%;
+  right: 0%;
+  padding-left: 230px; }
+
+.map-container-6 {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0; }
+
+.map-container-6 iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute; }
+
+.hr-border {
+  border-top-width: 2px; }
+
+.master-class .nav-tabs {
+  border-color: #161616;
+  text-transform: uppercase; }
+
+.nav-tabs .nav-item {
+  text-align: left; }
+
+#tabs .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  background-color: transparent; }
+
+#tabs .nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem; }
+
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,
@@ -13093,6 +13227,8 @@ header {
 /* Breakpoint for medium viewport */
 /* Breakpoint for medium viewport */
 @media (max-width: 991.98px) {
+  .font-30 {
+    font-size: 1.5rem; }
   .navbar-expand-md .navbar-nav .nav-link {
     padding-right: 0.4rem;
     padding-left: 0.4rem; }
@@ -13101,7 +13237,38 @@ header {
 
 /* Breakpoint for medium viewport */
 @media (max-width: 767.98px) {
+  .mb-5 {
+    margin-bottom: 2rem !important; }
+  .mt-5 {
+    margin-bottom: 2rem !important; }
+  .my-5 {
+    margin-bottom: 2rem !important;
+    margin-top: 2rem !important; }
+  .font-18,
+  .font-24 {
+    font-size: 1rem !important; }
+  .font-32 {
+    font-size: 1.5rem; }
+  .font-30 {
+    font-size: 1.25rem; }
   .navbar-nav {
-    width: 50%; } }
+    width: 50%; }
+  .team-brief {
+    position: unset !important;
+    padding: 1rem 0 0 !important; }
+  .team-image-holder {
+    margin: 0 auto; }
+  .gradient {
+    -webkit-box-shadow: inset 0px -60px 50px 0px #161616;
+    box-shadow: inset 0px -60px 50px 0px #161616; } }
 
 /* Breakpoint for medium viewport */
+@media (max-width: 575.98px) {
+  .font-30 {
+    font-size: 1rem; }
+  .navbar-nav {
+    width: 75%; }
+  .sm-padding {
+    padding: 0 15px; }
+  .master-class-tabs a {
+    padding: 0 5px !important; } }
