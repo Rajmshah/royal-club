@@ -65,6 +65,7 @@ module.exports.globals = {
 };
 
 global.mongoose = require("mongoose");
+global.MongoPaging = require("mongo-cursor-pagination");
 global.database = "rifc";
 global.storageBucket = "rifc";
 mongoose.Promise = global.Promise;
