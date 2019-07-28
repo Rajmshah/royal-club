@@ -3,12 +3,39 @@
   .font-30 {
     font-size: 1rem;
   }
+  body {
+    font-size: 0.875rem;
+  }
   //For All End
   //Header
   .navbar-nav {
     width: 75%;
   }
   //Header End
+  //Footer
+  .subscribe-head {
+    text-align: center !important;
+    padding-bottom: 1rem;
+  }
+  .social-list {
+    text-align: center !important;
+    padding-bottom: 1rem;
+  }
+
+  .left-section {
+    margin-right: 0 !important;
+  }
+  .left-section,
+  .right-section {
+    margin-bottom: 1rem;
+  }
+  .left-section {
+    float: left;
+  }
+  .right-section {
+    float: right;
+  }
+  //Footer End
   //Gallery
   .sm-padding {
     padding: 0 15px;

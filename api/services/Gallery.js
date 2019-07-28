@@ -8,9 +8,6 @@ var schema = new Schema({
   mediaLink: {
     type: String
   },
-  videoLink: {
-    type: String
-  },
   mediaType: {
     type: String,
     enum: ["Photo", "Video"]
@@ -37,5 +34,60 @@ schema.plugin(timestamps);
 module.exports = mongoose.model("Gallery", schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
-var model = {};
+var model = {
+  getAlbumsByType: function(data, callback) {
+    var pipeline = [
+      {
+        $match: {
+          mediaType: data.mediaType,
+          status: "Enable"
+        }
+      },
+      {
+        $group: {
+          _id: "$folderName",
+          folderName: {
+            $first: "$folderName"
+          },
+          title: {
+            $first: "$title"
+          },
+          mediaLink: {
+            $first: "$mediaLink"
+          },
+          mediaType: {
+            $first: "$mediaType"
+          },
+          eventDate: {
+            $first: "$eventDate"
+          },
+          videoThumbnail: {
+            $first: "$videoThumbnail"
+          },
+          order: {
+            $first: "$order"
+          },
+          status: {
+            $first: "$status"
+          }
+        }
+      },
+      {
+        $sort: {
+          order: 1
+        }
+      }
+    ];
+    var newPipeLine;
+    if (data.limit) {
+      newPipeLine = _.cloneDeep(pipeline);
+      newPipeLine.push({
+        $limit: data.limit
+      });
+    } else {
+      newPipeLine = _.cloneDeep(pipeline);
+    }
+    Gallery.aggregate(newPipeLine).exec(callback);
+  }
+};
 module.exports = _.assign(module.exports, exports, model);

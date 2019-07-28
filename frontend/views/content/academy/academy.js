@@ -29,4 +29,24 @@ myApp.controller("AcademyCtrl", function(
   $scope.$on("$viewContentLoaded", function(event) {
     $scope.swiperInit();
   });
+
+  // JSON FILE
+  //   {
+  //     "name": "Event Gallery",
+  //     "type": "selectFromTable",
+  //     "tableRef": "eventGallery",
+  //     "searchApi": "searchCall",
+  //     "placeholder": "Enter Event Gallery",
+  //     "id": "eventGallery",
+  //     "url": "Gallery/search"
+  //   }
+  //   {
+  //     "name": "Event Gallery",
+  //     "type": "selectFromTable",
+  //     "tableRef": "eventGallery",
+  //     "searchApi": "searchCall",
+  //     "placeholder": "Enter Event Gallery",
+  //     "id": "eventGallery",
+  //     "url": "Gallery/search"
+  //   }
 });

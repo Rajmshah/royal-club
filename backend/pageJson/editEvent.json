@@ -80,15 +80,6 @@
       "onView": true,
       "dropDown": ["Pending", "Completed"]
     }
-    // {
-    //   "name": "Event Gallery",
-    //   "type": "selectFromTable",
-    //   "tableRef": "eventGallery",
-    //   "searchApi": "searchCall",
-    //   "placeholder": "Enter Event Gallery",
-    //   "id": "eventGallery",
-    //   "url": "Gallery/search"
-    // }
   ],
   "action": [
     {

@@ -29,10 +29,10 @@
       "url": ""
     },
     {
-      "name": "Image Link (For Image Only)",
+      "name": "Image (For Photo Only)",
       "type": "image",
       "tableRef": "mediaLink",
-      "size": "1920 x 600",
+      "size": "1184 x 690",
       "placeholder": "Upload Image",
       "id": "mediaLink",
       "view": true,
@@ -44,11 +44,8 @@
       "name": "Video Link (For Video Only)",
       "type": "text",
       "tableRef": "mediaLink",
-      "size": "1920 x 600",
       "placeholder": "Enter Video Link",
       "id": "videoLink",
-      "view": true,
-      "disabled": true,
       "validation": ["", "", ""],
       "url": ""
     },
@@ -56,7 +53,7 @@
       "name": "Video Thumbnail",
       "type": "image",
       "tableRef": "videoThumbnail",
-      "size": "1920 x 600",
+      "size": "1184 x 690",
       "placeholder": "Upload Image",
       "id": "videoThumbnail",
       "view": true,

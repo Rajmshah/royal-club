@@ -1,4 +1,4 @@
-<section class="contact-us my-5 bg-color text-white">
+<section class="contact-us py-5 bg-color text-white">
   <div class="banners-img" ng-if="banner.banner">
     <img
       ng-src="{{ banner.banner | uploadpath }}"
@@ -26,10 +26,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-8 mx-auto  mb-5">
+      <div class="col-10 mx-auto mb-5">
         <div class="row no-gutters">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="mb-4 text-center border-right border-light px-2">
+            <div class="mb-4 text-center">
               <div class="">
                 <i class="fas fa-mobile"></i>
               </div>
@@ -38,13 +38,18 @@
               </div>
               <div class="">
                 <div class="">
-                  phone +919833930331
+                  +919833930331
+                </div>
+                <div class="">
+                  +917977664586
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="mb-4 text-center border-right border-light px-2">
+            <div
+              class="mb-4 text-center border-left border-right border-light px-3 mobile-border"
+            >
               <div class="">
                 <i class="fas fa-map-marker"></i>
               </div>
@@ -52,14 +57,14 @@
                 Address
               </div>
               <div class="">
-                <div class="">
-                  Ghatkopar East
+                <div class="" style=" word-break: break-all;">
+                  Ghatkopar East. Mumbai 400077
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="mb-4 text-center px-2">
+            <div class="mb-4 text-center">
               <div class="">
                 <i class="fas fa-envelope"></i>
               </div>
@@ -70,6 +75,9 @@
                 <div class="">
                   raj@wohlig.com
                 </div>
+                <div class="">
+                  rajwohlig@gmail.com
+                </div>
               </div>
             </div>
           </div>
@@ -77,55 +85,63 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-6 mx-auto mb-5">
+      <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto mb-5">
         <form>
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              name="name"
-              id=""
-              ng-model="name"
-              placeholder="Name"
-            />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id=""
+                  ng-model="name"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="phone"
+                  maxlength="10"
+                  id=""
+                  only-digits
+                  ng-model="mobile"
+                  placeholder="Mobile"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id=""
+                  ng-model="email"
+                  placeholder="Email ID"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="">
+                <textarea
+                  class="form-control no-resize"
+                  name=""
+                  id=""
+                  maxlength="300"
+                  rows="8"
+                  ng-model="query"
+                  ng-draggable="false"
+                  placeholder="Only upto 300 words"
+                ></textarea>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input
-              type="tel"
-              class="form-control"
-              name="phone"
-              maxlength="10"
-              id=""
-              only-digits
-              ng-model="mobile"
-              placeholder="Mobile"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-control"
-              name="email"
-              id=""
-              ng-model="email"
-              placeholder="Email ID"
-            />
-          </div>
-          <div class="form-group">
-            <textarea
-              class="form-control no-resize"
-              name=""
-              id=""
-              maxlength="300"
-              rows="8"
-              ng-model="query"
-              ng-draggable="false"
-              placeholder="Only upto 300 words"
-            ></textarea>
-          </div>
-          <div class="form-group">
-            <div class="submit text-center">
-              <div class="btn btn-light">Submit</div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="submit text-center mt-3">
+                <div class="btn btn-light">Submit</div>
+              </div>
             </div>
           </div>
         </form>
