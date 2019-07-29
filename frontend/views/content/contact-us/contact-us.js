@@ -12,4 +12,21 @@ myApp.controller("ContactUsCtrl", function(
   );
   TemplateService.title = "Contact Us"; //This is the Title of the Website
   $scope.navigation = NavigationService.getNavigation();
+  var service = NavigationService;
+  $scope.contact = [];
+
+  $scope.searchContact = function() {
+    service.searchContact(function(result) {
+      if (result.value) {
+        if (result.data.results.length > 0) {
+          $scope.contact = result.data.results[0];
+        } else {
+          $scope.contact = [];
+        }
+      } else {
+        toastr.error("Something went wrong.");
+      }
+    });
+  };
+  $scope.searchContact();
 });
