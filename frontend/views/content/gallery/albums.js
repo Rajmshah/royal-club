@@ -5,10 +5,32 @@ myApp.controller("GalleryAlbumsCtrl", function(
   $timeout,
   toastr,
   $http,
-  $uibModal
+  $uibModal,
+  $state,
+  $stateParams
 ) {
   $scope.template = TemplateService.getHTML("content/gallery/albums.html");
   TemplateService.title = "Gallery Albums"; //This is the Title of the Website
   $scope.navigation = NavigationService.getNavigation();
-  $scope.showVar = "Welcome";
+  var service = NavigationService;
+
+  $scope.getAlbums = [];
+
+  $scope.getAlbums = function() {
+    var albumDetail = {};
+    albumDetail.mediaType = $stateParams.mediaType;
+    service.getAlbumsByType(albumDetail, function(result) {
+      if (result.value) {
+        if (result.data.results.length > 0) {
+          $scope.getAlbums = result.data.results;
+        } else {
+          $scope.getAlbums = [];
+        }
+      } else {
+        toastr.error("Something went wrong.");
+      }
+    });
+  };
+
+  $scope.getAlbums();
 });

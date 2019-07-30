@@ -51,12 +51,12 @@ myApp.config(function(
       controller: "GalleryCtrl"
     })
     .state("gallery-albums", {
-      url: "/gallery/albums",
+      url: "/gallery/:mediaType",
       templateUrl: templateURL,
       controller: "GalleryAlbumsCtrl"
     })
     .state("gallery-photos", {
-      url: "/gallery/albums/photos",
+      url: "/gallery/:mediaType/:folderName",
       templateUrl: templateURL,
       controller: "GalleryPhotosCtrl"
     })
