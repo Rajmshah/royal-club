@@ -1,11 +1,11 @@
 <section class="gallery my-5">
-  <div class="banners-img" ng-if="banner.banner">
+  <!-- <div class="banners-img" ng-if="banner.banner">
     <img
       ng-src="{{ banner.banner | uploadpath }}"
       alt="{{ banner.name }} Banner"
       class="img-responsive"
     />
-  </div>
+  </div> -->
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -26,30 +26,30 @@
               <div class="d-flex">
                 <div class="">
                   <img
-                    src="img/1.jpg"
-                    alt="Gallery Pic1"
+                    src="{{ smallImage1 }}"
+                    alt="smallImage1"
                     class="img-responsive doneLoading"
                   />
                 </div>
                 <div class="">
                   <img
-                    src="img/2g.png"
-                    alt="Gallery Pic1"
+                    src="{{ smallImage2 }}"
+                    alt="smallImage2"
                     class="img-responsive doneLoading"
                   />
                 </div>
               </div>
               <div class="w-100">
                 <img
-                  src="img/3.jpg"
-                  alt="Gallery Pic1"
+                  src="{{ mediumImage }}"
+                  alt="mediumImage"
                   class="img-responsive doneLoading"
                 />
               </div>
             </div>
             <div class="w-100">
               <img
-                src="img/4.jpg"
+                src="{{ largeImage }}"
                 alt="Gallery Pic1"
                 class="img-responsive doneLoading"
               />
@@ -58,7 +58,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="getPhotoAlbums.length>0">
       <div class="mb-5 sm-padding">
         <div class="w-100">
           <div class="text-capitalize font-24 mb-3">
@@ -66,7 +66,34 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-3 mb-3">
+          <div
+            class="col-lg-3 col-md-3 col-sm-3 mb-3"
+            ng-repeat="photos in getPhotoAlbums track by $index"
+          >
+            <a
+              ui-sref="gallery-photos({mediaType:'Photo',folderName:photos.folderName})"
+              class="text-dark no-underline"
+            >
+              <div class="photo-holder pb-2" ng-if="photos.mediaLink">
+                <img
+                  src="{{ photos.mediaLink | uploadpath }}"
+                  alt="{{ photos.folderName }}"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="photo-holder pb-2" ng-if="!photos.mediaLink">
+                <img
+                  src="img/img-holder/1184x690.jpg"
+                  alt="{{ photos.folderName }}"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="photo-title titillium-web-bold font-18">
+                {{ photos.folderName }}
+              </div>
+            </a>
+          </div>
+          <!-- <div class="col-lg-3 col-md-3 col-sm-3 mb-3">
             <a href="#" class="text-dark no-underline">
               <div class="photo-holder pb-2">
                 <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
@@ -95,17 +122,7 @@
                 Academy
               </div>
             </a>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 mb-3">
-            <a href="#" class="text-dark no-underline">
-              <div class="photo-holder pb-2">
-                <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
-              </div>
-              <div class="photo-title titillium-web-bold font-18">
-                Academy
-              </div>
-            </a>
-          </div>
+          </div> -->
         </div>
         <div class="w-100 text-right">
           <a
@@ -118,7 +135,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="getVideoAlbums.length>0">
       <div class="sm-padding">
         <div class="w-100">
           <div class="text-capitalize font-24 mb-3">
@@ -126,7 +143,34 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-3 mb-3">
+          <div
+            class="col-lg-3 col-md-3 col-sm-3 mb-3"
+            ng-repeat="videos in getVideoAlbums track by $index"
+          >
+            <a
+              ui-sref="gallery-photos({mediaType:'Video',folderName:videos.folderName})"
+              class="text-dark no-underline"
+            >
+              <div class="photo-holder pb-2" ng-if="videos.videoThumbnail">
+                <img
+                  src="{{ videos.videoThumbnail | uploadpath }}"
+                  alt="{{ videos.folderName }}"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="photo-holder pb-2" ng-if="!videos.videoThumbnail">
+                <img
+                  src="img/img-holder/1184x690.jpg"
+                  alt="{{ videos.folderName }}"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="photo-title titillium-web-bold font-18">
+                {{ videos.folderName }}
+              </div>
+            </a>
+          </div>
+          <!-- <div class="col-lg-3 col-md-3 col-sm-3 mb-3">
             <a href="#" class="text-dark no-underline">
               <div class="photo-holder pb-2">
                 <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
@@ -155,17 +199,7 @@
                 Academy
               </div>
             </a>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 mb-3">
-            <a href="#" class="text-dark no-underline">
-              <div class="photo-holder pb-2">
-                <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
-              </div>
-              <div class="photo-title titillium-web-bold font-18">
-                Academy
-              </div>
-            </a>
-          </div>
+          </div> -->
         </div>
         <div class="w-100 text-right">
           <a

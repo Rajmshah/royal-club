@@ -13,18 +13,31 @@ myApp.controller("AboutUsCtrl", function(
   var service = NavigationService;
   $scope.about = [];
   $scope.teams = [];
+  $scope.showTeam = false;
 
   $scope.searchAbout = function() {
     service.searchAbout(function(result) {
       if (result.value) {
         if (result.data.results.length > 0) {
           $scope.about = result.data.results[0];
-          if ($scope.about.staff.length > 0) {
-            $scope.teams = $scope.about.staff;
+          if ($scope.about.team.length > 0) {
+            $scope.teams = $scope.about.team;
+            $scope.temp = _.filter($scope.about.team, function(o) {
+              if (o.status == "Enable") {
+                return o;
+              }
+            });
+            if ($scope.temp.length <= 0) {
+              $scope.showTeam = false;
+            } else {
+              $scope.showTeam = true;
+            }
           } else {
+            $scope.showTeam = false;
             $scope.teams = [];
           }
         } else {
+          $scope.showTeam = false;
           $scope.about = [];
           $scope.teams = [];
         }

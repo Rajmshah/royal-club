@@ -46,12 +46,14 @@ myApp.controller("NewsUpdatesCtrl", function(
   $scope.callNext = function() {
     delete $scope.newsDetail.previous;
     $scope.newsDetail.next = $scope.next;
+    window.scrollTo(0, 0);
     $scope.searchNewsAndUpdates();
   };
 
   $scope.callPrevious = function() {
     delete $scope.newsDetail.next;
     $scope.newsDetail.previous = $scope.previous;
+    window.scrollTo(0, 0);
     $scope.searchNewsAndUpdates();
   };
 

@@ -58,7 +58,8 @@ var model = {
       filter.previous = data.previous;
     }
     filter.query = {
-      eventDate: { $gt: new Date() }
+      eventDate: { $gt: new Date() },
+      status: "Enable"
     };
     Event.paginate(filter).then(result => {
       callback(null, result);
@@ -77,7 +78,8 @@ var model = {
       filter.previous = data.previous;
     }
     filter.query = {
-      eventDate: { $lt: new Date() }
+      eventDate: { $lt: new Date() },
+      status: "Enable"
     };
     Event.paginate(filter).then(result => {
       callback(null, result);

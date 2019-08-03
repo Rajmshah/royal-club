@@ -1,5 +1,5 @@
 <section class="gallery my-5">
-  <div class="container">
+  <div class="container" ng-if="getAlbums.length>0">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div
@@ -12,7 +12,60 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-3">
+      <div
+        class="col-lg-3 col-md-3 col-sm-3"
+        ng-repeat="album in getAlbums track by $index"
+      >
+        <div class="mb-3" ng-if="album.mediaType=='Photo'">
+          <a
+            ui-sref="gallery-photos({mediaType:'Photo',folderName:album.folderName})"
+            class="text-dark no-underline"
+          >
+            <div class="photo-holder pb-2" ng-if="album.mediaLink">
+              <img
+                src="{{ album.mediaLink | uploadpath }}"
+                alt="{{ album.folderName }}"
+                class="img-responsive"
+              />
+            </div>
+            <div class="photo-holder pb-2" ng-if="!album.mediaLink">
+              <img
+                src="img/img-holder/1184x690.jpg"
+                alt="{{ album.folderName }}"
+                class="img-responsive"
+              />
+            </div>
+            <div class="photo-title titillium-web-bold font-18">
+              {{ album.folderName }}
+            </div>
+          </a>
+        </div>
+        <div class="mb-3" ng-if="album.mediaType=='Video'">
+          <a
+            ui-sref="gallery-photos({mediaType:'Video',folderName:videos.folderName})"
+            class="text-dark no-underline"
+          >
+            <div class="photo-holder pb-2" ng-if="videos.videoThumbnail">
+              <img
+                src="{{ videos.videoThumbnail | uploadpath }}"
+                alt="{{ videos.folderName }}"
+                class="img-responsive"
+              />
+            </div>
+            <div class="photo-holder pb-2" ng-if="!videos.videoThumbnail">
+              <img
+                src="img/img-holder/1184x690.jpg"
+                alt="{{ videos.folderName }}"
+                class="img-responsive"
+              />
+            </div>
+            <div class="photo-title titillium-web-bold font-18">
+              {{ videos.folderName }}
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="col-lg-3 col-md-3 col-sm-3">
         <div class="mb-3">
           <a href="#" class="text-dark no-underline">
             <div class="photo-holder pb-2">
@@ -47,69 +100,7 @@
             </div>
           </a>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="mb-3">
-          <a href="#" class="text-dark no-underline">
-            <div class="photo-holder pb-2">
-              <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
-            </div>
-            <div class="photo-title titillium-web-bold font-18">
-              Academy
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="mb-3">
-          <a href="#" class="text-dark no-underline">
-            <div class="photo-holder pb-2">
-              <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
-            </div>
-            <div class="photo-title titillium-web-bold font-18">
-              Academy
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="mb-3">
-          <a href="#" class="text-dark no-underline">
-            <div class="photo-holder pb-2">
-              <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
-            </div>
-            <div class="photo-title titillium-web-bold font-18">
-              Academy
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="mb-3">
-          <a href="#" class="text-dark no-underline">
-            <div class="photo-holder pb-2">
-              <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
-            </div>
-            <div class="photo-title titillium-web-bold font-18">
-              Academy
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="mb-3">
-          <a href="#" class="text-dark no-underline">
-            <div class="photo-holder pb-2">
-              <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
-            </div>
-            <div class="photo-title titillium-web-bold font-18">
-              Academy
-            </div>
-          </a>
-        </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

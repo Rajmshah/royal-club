@@ -5,7 +5,8 @@ myApp.controller("ContactUsCtrl", function(
   $timeout,
   toastr,
   $http,
-  $uibModal
+  $uibModal,
+  $sce
 ) {
   $scope.template = TemplateService.getHTML(
     "content/contact-us/contact-us.html"
@@ -24,6 +25,8 @@ myApp.controller("ContactUsCtrl", function(
       if (result.value) {
         if (result.data.results.length > 0) {
           $scope.contact = result.data.results[0];
+          $scope.map = $sce.trustAsResourceUrl($scope.contact.mapLink);
+          console.log($scope.map);
         } else {
           $scope.contact = [];
         }
@@ -34,8 +37,13 @@ myApp.controller("ContactUsCtrl", function(
   };
   $scope.searchContact();
 
-  $scope.saveEnquiryForm = function(formDetail, formValid) {
-    if (formValid.$valid) {
+  $scope.saveEnquiryForm = function(formDetail) {
+    if (
+      formDetail.email &&
+      formDetail.mobile &&
+      formDetail.name &&
+      formDetail.query
+    ) {
       service.saveEnquiryForm(formDetail, function(result) {
         if (result.value) {
           $scope.showError = false;

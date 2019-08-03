@@ -1,11 +1,11 @@
 <section class="about-us my-5">
-  <div class="banners-img" ng-if="banner.banner">
+  <!-- <div class="banners-img" ng-if="banner.banner">
     <img
       ng-src="{{ banner.banner | uploadpath }}"
       alt="{{ banner.name }} Banner"
       class="img-responsive"
     />
-  </div>
+  </div> -->
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -18,43 +18,15 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="about.content1">
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="mb-5 content1">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum. <br />
-          <br />
-
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum. <br />
-          <br />
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </div>
+        <div
+          class="mb-5 content1"
+          ng-bind-html="about.content1 | rawHtml"
+        ></div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="showTeam">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="team bg-color-light py-4 mb-5">
           <div class="">
@@ -66,10 +38,14 @@
               </span>
             </div>
           </div>
-
+          <!-- 
           <div class="position-relative p-4">
             <div class="team-image-holder pr-3">
-              <img src="img/images.jpg" alt="rifc-team" class="img-responsive" />
+              <img
+                src="img/img-holder/480x480.jpg"
+                alt="rifc-team"
+                class="img-responsive"
+              />
             </div>
             <div class="position-absolute team-brief py-4 pr-4">
               <div
@@ -88,7 +64,11 @@
           </div>
           <div class="position-relative p-4">
             <div class="team-image-holder pr-3">
-              <img src="img/images.jpg" alt="rifc-team" class="img-responsive" />
+              <img
+                src="img/img-holder/480x480.jpg"
+                alt="rifc-team"
+                class="img-responsive"
+              />
             </div>
             <div class="position-absolute team-brief py-4 pr-4">
               <div
@@ -104,23 +84,35 @@
                 aperiam delectus iure!
               </div>
             </div>
-          </div>
-          <div class="position-relative p-4">
-            <div class="team-image-holder pr-3">
-              <img src="img/images.jpg" alt="rifc-team" class="img-responsive" />
+          </div> -->
+          <div
+            class="position-relative p-4"
+            ng-repeat="team in teams track by $index"
+            ng-if="team.status == 'Enable'"
+          >
+            <div class="team-image-holder pr-3" ng-if="team.image">
+              <img
+                ng-src="{{ team.image | uploadpath }}"
+                alt="rifc-team"
+                class="img-responsive"
+              />
+            </div>
+            <div class="team-image-holder pr-3" ng-if="!team.image">
+              <img
+                src="img/img-holder/480x480.jpg"
+                alt="rifc-team"
+                class="img-responsive"
+              />
             </div>
             <div class="position-absolute team-brief py-4 pr-4">
               <div
                 class="border-bottom border-dark text-capitalize font-18  mb-3"
               >
-                <span class="pr-5 titillium-web-semiBold">Vignesh Vignesh</span>
-                <span class="small">Founder</span>
+                <span class="pr-5 titillium-web-semiBold">{{ team.name }}</span>
+                <span class="small">{{ team.designation }}</span>
               </div>
               <div class="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Provident a unde ab natus fuga deleniti nemo praesentium hic
-                eaque aut pariatur mollitia iste ex dignissimos omnis at,
-                aperiam delectus iure!
+                {{ team.description }}
               </div>
             </div>
           </div>
@@ -129,7 +121,7 @@
               <div class="px-3">
                 <div class="img-holder mx-auto">
                   <img
-                    src="img/images.jpg"
+                    src="img/img-holder/480x480.jpg"
                     alt="rifc-team"
                     class="img-responsive"
                   />
@@ -156,7 +148,7 @@
               <div class="px-3">
                 <div class="img-holder mx-auto">
                   <img
-                    src="img/images.jpg"
+                    src="img/img-holder/480x480.jpg"
                     alt="rifc-team"
                     class="img-responsive"
                   />
@@ -183,7 +175,7 @@
               <div class="px-3">
                 <div class="img-holder mx-auto">
                   <img
-                    src="img/images.jpg"
+                    src="img/img-holder/480x480.jpg"
                     alt="rifc-team"
                     class="img-responsive"
                   />
@@ -208,19 +200,9 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="about.content2">
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="content2">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </div>
+        <div class="content2" ng-bind-html="about.content2 | rawHtml"></div>
       </div>
     </div>
   </div>

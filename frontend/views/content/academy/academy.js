@@ -14,6 +14,8 @@ myApp.controller("AcademyCtrl", function(
   $scope.academy = [];
   $scope.banners = [];
   $scope.staffs = [];
+  $scope.showStaff = false;
+  $scope.showBanner = false;
 
   $scope.searchAcademy = function() {
     service.searchAcademy(function(result) {
@@ -22,15 +24,39 @@ myApp.controller("AcademyCtrl", function(
           $scope.academy = result.data.results[0];
           if ($scope.academy.banner.length > 0) {
             $scope.banners = $scope.academy.banner;
+            $scope.tempBanner = _.filter($scope.academy.banner, function(o) {
+              if (o.status == "Enable") {
+                return o;
+              }
+            });
+            if ($scope.tempBanner.length <= 0) {
+              $scope.showBanner = false;
+            } else {
+              $scope.showBanner = true;
+            }
           } else {
+            $scope.showBanner = false;
             $scope.banners = [];
           }
           if ($scope.academy.staff.length > 0) {
             $scope.staffs = $scope.academy.staff;
+            $scope.temp = _.filter($scope.academy.staff, function(o) {
+              if (o.status == "Enable") {
+                return o;
+              }
+            });
+            if ($scope.temp.length <= 0) {
+              $scope.showStaff = false;
+            } else {
+              $scope.showStaff = true;
+            }
           } else {
+            $scope.showStaff = false;
             $scope.staffs = [];
           }
         } else {
+          $scope.showStaff = false;
+          $scope.showBanner = false;
           $scope.academy = [];
           $scope.banners = [];
           $scope.staffs = [];

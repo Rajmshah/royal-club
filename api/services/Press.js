@@ -32,13 +32,15 @@ var model = {
       limit: data.limit ? parseInt(data.limit) : defaultLimit
     };
     filter.paginatedField = "newsDate";
+    filter.query = {};
+    filter.query.status = "Enable";
     if (data.next) {
       filter.next = data.next;
     }
     if (data.previous) {
       filter.previous = data.previous;
     }
-    Event.paginate(filter).then(result => {
+    Press.paginate(filter).then(result => {
       callback(null, result);
     });
   }

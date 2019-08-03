@@ -15,6 +15,11 @@ myApp.controller("MasterClassCtrl", function(
   var service = NavigationService;
 
   $scope.masterClass = [];
+  $scope.titles = [];
+  $scope.firstTitle = true;
+  $scope.secondTitle = false;
+  $scope.thirdTitle = false;
+  $scope.fourthTitle = false;
 
   $scope.getUpcoming = [];
   $scope.upcomingDetail = {};
@@ -35,6 +40,9 @@ myApp.controller("MasterClassCtrl", function(
       if (result.value) {
         if (result.data.results.length > 0) {
           $scope.masterClass = result.data.results;
+          _.each(result.data.results, function(detail) {
+            $scope.titles.push(detail.name);
+          });
         } else {
           $scope.masterClass = [];
         }
@@ -45,6 +53,41 @@ myApp.controller("MasterClassCtrl", function(
   };
 
   $scope.searchMasterClass();
+
+  $scope.showClass = function(classes) {
+    switch (classes) {
+      case 1:
+        $scope.firstTitle = true;
+        $scope.secondTitle = false;
+        $scope.thirdTitle = false;
+        $scope.fourthTitle = false;
+        break;
+      case 2:
+        $scope.firstTitle = false;
+        $scope.secondTitle = true;
+        $scope.thirdTitle = false;
+        $scope.fourthTitle = false;
+        break;
+      case 3:
+        $scope.firstTitle = false;
+        $scope.secondTitle = false;
+        $scope.thirdTitle = true;
+        $scope.fourthTitle = false;
+        break;
+      case 4:
+        $scope.firstTitle = false;
+        $scope.secondTitle = false;
+        $scope.thirdTitle = false;
+        $scope.fourthTitle = true;
+        break;
+      default:
+        $scope.firstTitle = true;
+        $scope.secondTitle = false;
+        $scope.thirdTitle = false;
+        $scope.fourthTitle = false;
+        break;
+    }
+  };
 
   $scope.searchUpcomingEvent = function() {
     service.searchUpcomingEvent($scope.upcomingDetail, function(result) {
@@ -71,7 +114,7 @@ myApp.controller("MasterClassCtrl", function(
   $scope.searchUpcomingEvent();
 
   $scope.searchPastEvent = function() {
-    service.searchPastEvent($scope.newsDetail, function(result) {
+    service.searchPastEvent($scope.pastDetail, function(result) {
       if (result.value) {
         if (result.data.results.length > 0) {
           $scope.getPast = result.data.results;
@@ -98,10 +141,12 @@ myApp.controller("MasterClassCtrl", function(
     if (type == "past") {
       delete $scope.pastDetail.previous;
       $scope.pastDetail.next = $scope.nextPast;
+      // window.scrollTo(0,0);
       $scope.searchPastEvent();
     } else {
       delete $scope.upcomingDetail.previous;
       $scope.upcomingDetail.next = $scope.next;
+      // window.scrollTo(0,0);
       $scope.searchUpcomingEvent();
     }
   };
@@ -110,10 +155,12 @@ myApp.controller("MasterClassCtrl", function(
     if (type == "past") {
       delete $scope.pastDetail.next;
       $scope.pastDetail.previous = $scope.previousPast;
+      // window.scrollTo(0,0);
       $scope.searchPastEvent();
     } else {
       delete $scope.upcomingDetail.next;
       $scope.upcomingDetail.previous = $scope.previous;
+      // window.scrollTo(0,0);
       $scope.searchUpcomingEvent();
     }
   };

@@ -1,11 +1,11 @@
-<section class="contact-us py-5 bg-color text-white">
-  <div class="banners-img" ng-if="banner.banner">
+<section class="contact-us pt-5 bg-color text-white">
+  <!-- <div class="banners-img" ng-if="banner.banner">
     <img
       ng-src="{{ banner.banner | uploadpath }}"
       alt="{{ banner.name }} Banner"
       class="img-responsive"
     />
-  </div>
+  </div> -->
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -37,11 +37,11 @@
                 Phone
               </div>
               <div class="">
-                <div class="">
-                  +919833930331
-                </div>
-                <div class="">
-                  +917977664586
+                <div
+                  class=""
+                  ng-repeat="mobile in contact.mobile track by $index"
+                >
+                  {{ mobile }}
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@
               </div>
               <div class="">
                 <div class="" style=" word-break: break-all;">
-                  Ghatkopar East. Mumbai 400077
+                  {{ contact.address }}
                 </div>
               </div>
             </div>
@@ -72,11 +72,11 @@
                 Email
               </div>
               <div class="">
-                <div class="">
-                  raj@wohlig.com
-                </div>
-                <div class="">
-                  rajwohlig@gmail.com
+                <div
+                  class=""
+                  ng-repeat="email in contact.email track by $index"
+                >
+                  {{ email }}
                 </div>
               </div>
             </div>
@@ -86,7 +86,11 @@
     </div>
     <div class="row">
       <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto mb-5">
-        <form>
+        <form
+          name="enquiryForm"
+          role="form"
+          ng-submit="saveEnquiryForm(formData)"
+        >
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -95,19 +99,21 @@
                   class="form-control"
                   name="name"
                   id=""
-                  ng-model="name"
+                  ng-model="formData.name"
                   placeholder="Name"
+                  only-alpha
                 />
               </div>
               <div class="form-group">
                 <input
                   type="tel"
                   class="form-control"
-                  name="phone"
+                  name="mobile"
                   maxlength="10"
+                  minlength="8"
                   id=""
                   only-digits
-                  ng-model="mobile"
+                  ng-model="formData.mobile"
                   placeholder="Mobile"
                 />
               </div>
@@ -117,7 +123,7 @@
                   class="form-control"
                   name="email"
                   id=""
-                  ng-model="email"
+                  ng-model="formData.email"
                   placeholder="Email ID"
                 />
               </div>
@@ -126,11 +132,11 @@
               <div class="">
                 <textarea
                   class="form-control no-resize"
-                  name=""
+                  name="query"
                   id=""
                   maxlength="300"
                   rows="8"
-                  ng-model="query"
+                  ng-model="formData.query"
                   ng-draggable="false"
                   placeholder="Only upto 300 words"
                 ></textarea>
@@ -140,7 +146,13 @@
           <div class="row">
             <div class="col-md-12">
               <div class="submit text-center mt-3">
-                <div class="btn btn-light">Submit</div>
+                <div class="pb-3" ng-if="showValidationError">
+                  Fill up all the fields with valid values.
+                </div>
+                <div class="pb-3" ng-if="showError">
+                  Something went wrong. Resubmit the form.
+                </div>
+                <button class="btn btn-light" type="submit">Submit</button>
               </div>
             </div>
           </div>
@@ -148,9 +160,9 @@
       </div>
     </div>
   </div>
-  <div class="google-map">
+  <div class="google-map" ng-if="map">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.540925265231!2d72.90482525007553!3d19.08391148701997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c62c49aa93a1%3A0x8517777532599697!2sUpashray+Ln%2C+Saibaba+Nagar%2C+Pant+Nagar%2C+Ghatkopar+East%2C+Mumbai%2C+Maharashtra+400077!5e0!3m2!1sen!2sin!4v1563389717247!5m2!1sen!2sin"
+      src="{{ map }}"
       width="100%"
       height="400px"
       frameborder="0"

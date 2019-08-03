@@ -16,6 +16,15 @@
       "url": ""
     },
     {
+      "name": "Order",
+      "type": "number",
+      "tableRef": "order",
+      "placeholder": "Enter Order",
+      "id": "order",
+      "validation": ["", "trim", "unique"],
+      "url": ""
+    },
+    {
       "name": "Content",
       "type": "wysiwyg",
       "tableRef": "content",
