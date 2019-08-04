@@ -30,9 +30,9 @@ myApp.controller("headerCtrl", function(
       subnav: []
     },
     {
-      name: "Academy",
+      name: "Club",
       classis: "active",
-      anchor: "academy",
+      anchor: "club",
       subnav: []
     },
     // {

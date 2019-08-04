@@ -26,7 +26,7 @@ myApp.factory("NavigationService", function($http) {
         callback(data);
       });
     },
-    searchAcademy: function(callback) {
+    searchClub: function(callback) {
       $http.post(adminurl + "Academy/search").then(function(data) {
         data = data.data;
         callback(data);

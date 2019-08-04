@@ -20,10 +20,10 @@ myApp.controller("GalleryCtrl", function(
 
   $scope.homepage = [];
   $scope.gallery = [];
-  $scope.smallImage1 = "img/1.jpg";
-  $scope.smallImage2 = "img/2g.png";
-  $scope.mediumImage = "img/3.jpg";
-  $scope.largeImage = "img/4.jpg";
+  $scope.smallImage1 = "img/img-holder/1.jpg";
+  $scope.smallImage2 = "img/img-holder/2.jpg";
+  $scope.mediumImage = "img/img-holder/570x300.jpg";
+  $scope.largeImage = "img/img-holder/570x600.jpg";
 
   $scope.searchHomepage = function() {
     service.searchHomepage(function(result) {

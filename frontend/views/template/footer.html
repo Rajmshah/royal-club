@@ -11,40 +11,60 @@
       </div>
       <div class="col-lg-4 col-md-4 col-sm-6 col-12">
         <div class="">
-          <div class="input-group">
-            <input type="text" class="form-control" ng-model="newsletter" />
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">
-                <i class="far fa-envelope"></i>
-              </button>
+          <form
+            name="subscriptionForm"
+            role="form"
+            ng-submit="saveSubscription(subscribe)"
+          >
+            <div class="input-group">
+              <input
+                type="email"
+                name="email"
+                ng-model="subscribe.email"
+                class="form-control"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">
+                  <i class="far fa-envelope"></i>
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="text-center pt-1" ng-if="showSubscribeValidationError">
+          Fill up all the fields with valid values.
+        </div>
+        <div class="text-center pt-1" ng-if="showSubscribeError">
+          Something went wrong. Resubmit the form.
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="footerLists social-list">
           <div>RIFC Social Handles</div>
           <div class="">
-            <span class="mx-2 pointer">
+            <span class="mx-4 pointer">
               <a href="https://www.facebook.com/royalinfiafc/" target="_blank"
                 ><i class="fab fa-facebook"></i
               ></a>
             </span>
-            <span class="mx-2 pointer">
+            <span class=" pointer">
               <a
                 href="https://instagram.com/royalindiafc?igshid=tl1rkuq2p28o"
                 target="_blank"
                 ><i class="fa fa-instagram"></i
               ></a>
             </span>
-            <span class="mx-2 pointer">
+            <!-- <span class="mx-2 pointer">
               <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
             </span>
             <span class="mx-2 pointer">
               <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-            </span>
+            </span> -->
           </div>
         </div>
       </div>
@@ -53,16 +73,16 @@
           <ul class="list-inline">
             <li class="list-inline-item mr-3 left-section">
               <ul class="list-unstyled text-left">
-                <li><a href="https://rifc.com">Home</a></li>
-                <li><a href="https://rifc.com">About Us</a></li>
-                <li><a href="https://rifc.com">Academy</a></li>
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="about-us">About Us</a></li>
+                <li><a ui-sref="club">Club</a></li>
               </ul>
             </li>
             <li class="list-inline-item right-section">
               <ul class="list-unstyled text-left">
-                <li><a href="https://rifc.com">Master Class</a></li>
-                <li><a href="https://rifc.com">News & updates</a></li>
-                <li><a href="https://rifc.com">Contact Us</a></li>
+                <li><a ui-sref="master-class">Master Class</a></li>
+                <li><a ui-sref="news-updates">News & updates</a></li>
+                <li><a ui-sref="contact-us">Contact Us</a></li>
               </ul>
             </li>
           </ul>
@@ -73,7 +93,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="footerMain text-center">
           <div class="footerLists">
-            <a href="https://rifc.com">Copyright - rifc.com</a>
+            <a ui-sref="home">Copyright - rifc.com</a>
             <span class="listSeparator">|</span>
           </div>
           <div class="footerLists">

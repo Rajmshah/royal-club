@@ -1,31 +1,187 @@
 <section class="homepage">
+  <!-- <div class="banner-img position-relative" ng-if="banners.length>0">
+    <div class="" ng-repeat="banner in banners track by $index">
+      <a
+        ng-if="banner.linkType=='Internal'"
+        ui-sref="{{ ads.link }}"
+        class="pointer"
+      >
+        <div class="" ng-if="banner.image">
+          <img
+            src="{{ banner.image | uploadpath }}"
+            alt="{{ banner.title }}"
+            class="img-responsive"
+          />
+        </div>
+        <div class="" ng-if="!banner.image">
+          <img
+            src="img/Home_Page_1.jpg"
+            alt="{{ banner.title }}"
+            class="img-responsive"
+          />
+        </div>
+        <div class="position-absolute gradient">
+          <div class="gradient-bg"></div>
+        </div>
+      </a>
+      <a
+        ng-if="banner.linkType=='External'"
+        href="{{ ads.link }}"
+        class="pointer"
+      >
+        <div class="" ng-if="banner.image">
+          <img
+            src="{{ banner.image | uploadpath }}"
+            alt="{{ banner.title }}"
+            class="img-responsive"
+          />
+        </div>
+        <div class="" ng-if="!banner.image">
+          <img
+            src="img/Home_Page_1.jpg"
+            alt="{{ banner.title }}"
+            class="img-responsive"
+          />
+        </div>
+        <div class="position-absolute gradient">
+          <div class="gradient-bg"></div>
+        </div>
+      </a>
+    </div>
+  </div> -->
   <div class="main-content">
-    <div class="banner-img position-relative">
-      <img src="img/banner.jpg" alt="Home Banner" class="img-responsive" />
-      <div class="position-absolute gradient">
-        <div class="gradient-bg"></div>
+    <div class="banners-img position-relative" ng-if="banners.length>0">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide w-100"
+            ng-repeat="banner in banners track by $index"
+          >
+            <div class="registerplayer-banner" ng-if="!banner.image">
+              <img
+                src="img/img-holder/1920x810.jpg"
+                alt="Academy Banner"
+                class="img-responsive"
+              />
+            </div>
+            <div class="registerplayer-banner" ng-if="banner.image">
+              <a
+                href="{{ banner.link }}"
+                target="_self"
+                ng-if="banner.linkType == 'Internal'"
+              >
+                <img
+                  ng-src="{{ banner.image | uploadpath }}"
+                  alt="Academy Banner"
+                  class="img-responsive"
+                />
+              </a>
+              <a
+                href="{{ banner.link }}"
+                target="_blank"
+                ng-if="banner.linkType == 'External'"
+              >
+                <img
+                  ng-src="{{ banner.image | uploadpath }}"
+                  alt="Academy Banner"
+                  class="img-responsive"
+                />
+              </a>
+            </div>
+            <div class="position-absolute gradient">
+              <div class="gradient-bg"></div>
+            </div>
+          </div>
+
+          <!-- <div class="swiper-slide w-100">
+            <div class="registerplayer-banner">
+              <img
+                src="img/Home_Page_1.jpg"
+                alt="Academy Banner"
+                class="img-responsive"
+              />
+            </div>
+            <div class="position-absolute gradient">
+              <div class="gradient-bg"></div>
+            </div>
+          </div>
+          <div class="swiper-slide w-100">
+            <div class="registerplayer-banner">
+              <img
+                src="img/Home_Page_1.jpg"
+                alt="Academy Banner"
+                class="img-responsive"
+              />
+            </div>
+            <div class="position-absolute gradient">
+              <div class="gradient-bg"></div>
+            </div>
+          </div> -->
+        </div>
       </div>
     </div>
     <div class="bg-color text-white">
       <div class="text-center text-uppercase oswald-bold font-30 ls-2 py-2">
-        Royal indian football club | Be the best in you
+        ROYAL INDIA FOOTBALL CLUB | START UNKNOWN, WIN KNOWINGLY !
       </div>
     </div>
   </div>
-  <div class="ad-block bg-color py-5">
+  <div class="ad-block bg-color py-5" ng-if="adBlocks.length > 0">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <a href="#" class="text-white no-underline">
-            <div class="ad-holder pb-2">
-              <img src="img/ad1.jpg" alt="Ad 1" class="img-responsive" />
+        <div
+          class="col-lg-4 col-md-4 col-sm-4"
+          ng-repeat="ads in adBlocks track by $index"
+          ng-if="ads.status == 'Enable'"
+        >
+          <a
+            ng-if="ads.linkType=='Internal'"
+            ui-sref="{{ ads.link }}"
+            class="text-white no-underline"
+          >
+            <div class="ad-holder pb-2" ng-if="!ads.image">
+              <img
+                src="img/img-holder/1184x690.jpg"
+                alt="{{ ads.title }}"
+                class="img-responsive"
+              />
+            </div>
+            <div class="ad-holder pb-2" ng-if="ads.image">
+              <img
+                ng-src="{{ ads.image | uploadpath }}"
+                alt="{{ ads.title }}"
+                class="img-responsive"
+              />
             </div>
             <div class="ad-title titillium-web-bold font-18 pb-2">
-              Royal indian football club | About Us
+              {{ ads.title }}
+            </div>
+          </a>
+          <a
+            href="{{ ads.link }}"
+            ng-if="ads.linkType=='External'"
+            class="text-white no-underline"
+          >
+            <div class="ad-holder pb-2" ng-if="!ads.image">
+              <img
+                src="img/img-holder/1184x690.jpg"
+                alt="{{ ads.title }}"
+                class="img-responsive"
+              />
+            </div>
+            <div class="ad-holder pb-2" ng-if="ads.image">
+              <img
+                ng-src="{{ ads.image | uploadpath }}"
+                alt="{{ ads.title }}"
+                class="img-responsive"
+              />
+            </div>
+            <div class="ad-title titillium-web-bold font-18 pb-2">
+              {{ ads.title }}
             </div>
           </a>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
+        <!-- <div class="col-lg-4 col-md-4 col-sm-4">
           <a href="#" class="text-white no-underline">
             <div class="ad-holder pb-2">
               <img src="img/ad2.jpg" alt="Ad 2" class="img-responsive" />
@@ -41,10 +197,10 @@
               <img src="img/ad3.jpg" alt="Ad 3" class="img-responsive" />
             </div>
             <div class="ad-title titillium-web-bold font-18 pb-2">
-              Royal indian football club | About Us
+              ROYAL INDIA FOOTBALL CLUB | START UNKNOWN, WIN KNOWINGLY !
             </div>
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -126,13 +282,16 @@
           </div>
           <div class="text-justify mb-3">
             <p>
-              Interact and train with the the football legends and up your
-              skills to be the best in the class... Join Royal India Football
-              Club and be a part of master class program and be the best of you.
+              Master class is an interactive experience for budding footballers
+              of the nation, We at RIFC offer master class sessions with the
+              icons of the footballing industry where the RIFC athletes get to
+              learn about the on-field and off-field aspects of the beautiful
+              game in an interactive session wherein the athletes develop into
+              better professionals.
             </p>
           </div>
           <div class="know-more text-center">
-            <div class="btn btn-light">Know More</div>
+            <div class="btn btn-light" ui-sref="master-class">Know More</div>
           </div>
         </div>
       </div>
@@ -146,68 +305,70 @@
             class="subhead oswald-bold font-24 mb-5 text-uppercase text-center"
           >
             <span class="px-2 border-bottom border-light">
-              Academy
+              The Club
             </span>
           </div>
           <div class="text-justify">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              molestias fuga doloribus a voluptate at optio ipsa nulla dolor,
-              officia quo, accusamus aut placeat eaque recusandae,
-              exercitationem quia similique expedita.
+              We at RIFC have the complete training module for the best of an
+              athlete, We at RIFC believe there is no good reason to train but
+              nowhere to showcase abilities. The Squad will be competing in the
+              AIFF Youth League (U13 and U15), MDFA (U10, U12, and U14) which
+              will introduce them to the Indian footballing culture.
             </p>
           </div>
           <div class="know-more text-center mt-5">
-            <div class="btn btn-light">Know More</div>
+            <div class="btn btn-light" ui-sref="club">Know More</div>
           </div>
         </div>
       </div>
     </div>
   </div>
   <hr class="m-0 border-dark" />
+
   <div class="gallery-showcase bg-color text-white py-5">
     <div class="container">
       <div class="row">
         <div class="mx-auto">
           <div class="text-center mb-5">
-            <div class="subhead oswald-bold font-24 mb-3 text-uppercase">
+            <div class="subhead oswald-bold font-24 text-uppercase">
               <span class="px-2 border-bottom border-light">
                 Gallery
               </span>
             </div>
-            <div class="font-12">
+            <!-- <div class="font-12">
               Photos and News from the football community
-            </div>
+            </div> -->
           </div>
           <div class="d-flex">
             <div class="w-100">
               <div class="d-flex">
                 <div class="">
                   <img
-                    src="img/1.jpg"
-                    alt="Gallery Pic1"
+                    src="{{ smallImage1 }}"
+                    alt="smallImage1"
                     class="img-responsive doneLoading"
                   />
                 </div>
                 <div class="">
                   <img
-                    src="img/2g.png"
-                    alt="Gallery Pic1"
+                    src="{{ smallImage2 }}"
+                    alt="smallImage2"
                     class="img-responsive doneLoading"
                   />
                 </div>
               </div>
               <div class="w-100">
                 <img
-                  src="img/3.jpg"
-                  alt="Gallery Pic1"
+                  src="{{ mediumImage }}"
+                  alt="mediumImage"
                   class="img-responsive doneLoading"
                 />
               </div>
             </div>
             <div class="w-100">
               <img
-                src="img/4.jpg"
+                src="{{ largeImage }}"
                 alt="Gallery Pic1"
                 class="img-responsive doneLoading"
               />
@@ -228,7 +389,11 @@
               Enquiries
             </span>
           </div>
-          <form>
+          <form
+            name="enquiryForm"
+            role="form"
+            ng-submit="saveEnquiryForm(formData)"
+          >
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -237,19 +402,21 @@
                     class="form-control"
                     name="name"
                     id=""
-                    ng-model="name"
+                    ng-model="formData.name"
                     placeholder="Name"
+                    only-alpha
                   />
                 </div>
                 <div class="form-group">
                   <input
                     type="tel"
                     class="form-control"
-                    name="phone"
+                    name="mobile"
                     maxlength="10"
+                    minlength="8"
                     id=""
                     only-digits
-                    ng-model="mobile"
+                    ng-model="formData.mobile"
                     placeholder="Mobile"
                   />
                 </div>
@@ -259,7 +426,7 @@
                     class="form-control"
                     name="email"
                     id=""
-                    ng-model="email"
+                    ng-model="formData.email"
                     placeholder="Email ID"
                   />
                 </div>
@@ -268,11 +435,11 @@
                 <div class="">
                   <textarea
                     class="form-control no-resize"
-                    name=""
+                    name="query"
                     id=""
                     maxlength="300"
                     rows="8"
-                    ng-model="query"
+                    ng-model="formData.query"
                     ng-draggable="false"
                     placeholder="Only upto 300 words"
                   ></textarea>
@@ -282,7 +449,13 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="submit text-center mt-3">
-                  <div class="btn btn-light">Submit</div>
+                  <div class="pb-3" ng-if="showValidationError">
+                    Fill up all the fields with valid values.
+                  </div>
+                  <div class="pb-3" ng-if="showError">
+                    Something went wrong. Resubmit the form.
+                  </div>
+                  <button class="btn btn-light" type="submit">Submit</button>
                 </div>
               </div>
             </div>

@@ -13,9 +13,13 @@ myApp.controller("HomeCtrl", function(
   var service = NavigationService;
 
   $scope.homepage = [];
-  $scope.banner = [];
+  $scope.banners = [];
   $scope.adBlocks = [];
   $scope.gallery = [];
+  $scope.smallImage1 = "img/img-holder/1.jpg";
+  $scope.smallImage2 = "img/img-holder/2.jpg";
+  $scope.mediumImage = "img/img-holder/570x300.jpg";
+  $scope.largeImage = "img/img-holder/570x600.jpg";
 
   $scope.formData = {};
   $scope.showError = false;
@@ -31,9 +35,9 @@ myApp.controller("HomeCtrl", function(
         if (result.data.results.length > 0) {
           $scope.homepage = result.data.results[0];
           if ($scope.homepage.banner.length > 0) {
-            $scope.banner = $scope.homepage.banner;
+            $scope.banners = $scope.homepage.banner;
           } else {
-            $scope.banner = [];
+            $scope.banners = [];
           }
           if ($scope.homepage.adBlock.length > 0) {
             $scope.adBlocks = $scope.homepage.adBlock;
@@ -42,12 +46,53 @@ myApp.controller("HomeCtrl", function(
           }
           if ($scope.homepage.gallery.length > 0) {
             $scope.gallery = $scope.homepage.gallery;
+            _.each($scope.gallery, function(image) {
+              if (image.status == "Enable") {
+                switch (image.imageType) {
+                  case "Image 285 x 300":
+                    if (
+                      _.isEmpty($scope.smallImage1) ||
+                      $scope.smallImage1.charAt(0) == "i"
+                    ) {
+                      if (image.image) {
+                        $scope.smallImage1 = $filter("uploadpath")(image.image);
+                      } else {
+                        $scope.smallImage1 = "img/1.jpg";
+                      }
+                    } else {
+                      if (image.image) {
+                        $scope.smallImage2 = $filter("uploadpath")(image.image);
+                      } else {
+                        $scope.smallImage2 = "img/2g.png";
+                      }
+                    }
+                    break;
+                  case "Image 570 x 300":
+                    if (image.image) {
+                      $scope.mediumImage = $filter("uploadpath")(image.image);
+                    } else {
+                      $scope.mediumImage = "img/3.jpg";
+                    }
+                    break;
+                  case "Image 570 x 600":
+                    if (image.image) {
+                      $scope.largeImage = $filter("uploadpath")(image.image);
+                    } else {
+                      $scope.largeImage = "img/4.jpg";
+                    }
+                    break;
+
+                  default:
+                    break;
+                }
+              }
+            });
           } else {
             $scope.gallery = [];
           }
         } else {
           $scope.homepage = [];
-          $scope.banner = [];
+          $scope.banners = [];
           $scope.adBlocks = [];
           $scope.gallery = [];
         }
@@ -58,8 +103,13 @@ myApp.controller("HomeCtrl", function(
   };
   $scope.searchHomepage();
 
-  $scope.saveEnquiryForm = function(formDetail, formValid) {
-    if (formValid.$valid) {
+  $scope.saveEnquiryForm = function(formDetail) {
+    if (
+      formDetail.email &&
+      formDetail.mobile &&
+      formDetail.name &&
+      formDetail.query
+    ) {
       service.saveEnquiryForm(formDetail, function(result) {
         if (result.value) {
           $scope.showError = false;
@@ -69,31 +119,33 @@ myApp.controller("HomeCtrl", function(
         } else {
           toastr.error("Something went wrong.");
           $scope.showError = true;
+          $scope.showValidationError = false;
         }
       });
     } else {
       toastr.error("Enter valid values in the fields.");
       $scope.showValidationError = true;
+      $scope.showError = false;
     }
   };
 
-  $scope.saveSubscription = function(subscribe, subscribeValid) {
-    if (subscribeValid.$valid) {
-      service.saveSubscription(subscribe, function(result) {
-        if (result.value) {
-          $scope.showSubscribeError = false;
-          $scope.showSubscribeValidationError = false;
-          $scope.subscribe = {};
-          toastr.success("Subscription received successfully.");
-        } else {
-          toastr.error("Something went wrong.");
-          $scope.showSubscribeError = true;
-        }
+  $scope.swiperInit = function() {
+    $timeout(function() {
+      // BANNER
+      var bannerSlide = new Swiper(".banners-img .swiper-container", {
+        slidesPerView: 1,
+        preloadImages: true,
+        speed: 500,
+        autoplay: 3000,
+        nextButton: ".banners-img .swiper-button-next",
+        prevButton: ".banners-img .swiper-button-prev",
+        reverseDirection: false,
+        paginationClickable: true
+        // loop: true,
       });
-    } else {
-      toastr.error("Enter valid value in the field.");
-      $scope.subscribe = {};
-      $scope.showSubscribeValidationError = true;
-    }
+    }, 1000);
   };
+  $scope.$on("$viewContentLoaded", function(event) {
+    $scope.swiperInit();
+  });
 });

@@ -24,7 +24,7 @@ myApp.factory("NavigationService", function($http) {
       icon: "phone"
     },
     {
-      name: "Academy",
+      name: "Club",
       classis: "activeColor",
       sref: "#!/academy",
       icon: "phone"

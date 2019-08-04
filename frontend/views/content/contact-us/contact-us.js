@@ -26,7 +26,6 @@ myApp.controller("ContactUsCtrl", function(
         if (result.data.results.length > 0) {
           $scope.contact = result.data.results[0];
           $scope.map = $sce.trustAsResourceUrl($scope.contact.mapLink);
-          console.log($scope.map);
         } else {
           $scope.contact = [];
         }
@@ -53,11 +52,13 @@ myApp.controller("ContactUsCtrl", function(
         } else {
           toastr.error("Something went wrong.");
           $scope.showError = true;
+          $scope.showValidationError = false;
         }
       });
     } else {
       toastr.error("Enter valid values in the fields.");
       $scope.showValidationError = true;
+      $scope.showError = false;
     }
   };
 });

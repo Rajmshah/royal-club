@@ -35,16 +35,16 @@ myApp.config(function(
       templateUrl: templateURL,
       controller: "AboutUsCtrl"
     })
-    .state("academy", {
-      url: "/academy",
-      templateUrl: templateURL,
-      controller: "AcademyCtrl"
-    })
     .state("club", {
       url: "/club",
       templateUrl: templateURL,
       controller: "ClubCtrl"
     })
+    // .state("club", {
+    //   url: "/club",
+    //   templateUrl: templateURL,
+    //   controller: "ClubCtrl"
+    // })
     .state("gallery", {
       url: "/gallery",
       templateUrl: templateURL,

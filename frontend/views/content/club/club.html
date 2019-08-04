@@ -1,0 +1,235 @@
+<!--Banner-->
+<section class="club my-5">
+  <!-- <div class="banners-img" ng-if="banner.banner">
+    <img
+      ng-src="{{ banner.banner | uploadpath }}"
+      alt="{{ banner.name }} Banner"
+      class="img-responsive"
+    />
+  </div> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div
+          class="text-center text-uppercase oswald-bold main-head font-32 mb-5"
+        >
+          <span class="border-bottom border-dark px-2">
+            The Club
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-if="showBanner">
+      <div class="banners-img position-relative mb-5">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide w-100"
+              ng-repeat="banner in banners track by $index"
+            >
+              <div class="registerplayer-banner" ng-if="!banner.image">
+                <img
+                  src="img/img-holder/1920x600.jpg"
+                  alt="Academy Banner"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="registerplayer-banner" ng-if="banner.image">
+                <a
+                  href="{{ banner.link }}"
+                  target="_self"
+                  ng-if="banner.linkType == 'Internal'"
+                >
+                  <img
+                    ng-src="{{ banner.image | uploadpath }}"
+                    alt="Academy Banner"
+                    class="img-responsive"
+                  />
+                </a>
+                <a
+                  href="{{ banner.link }}"
+                  target="_blank"
+                  ng-if="banner.linkType == 'External'"
+                >
+                  <img
+                    ng-src="{{ banner.image | uploadpath }}"
+                    alt="Academy Banner"
+                    class="img-responsive"
+                  />
+                </a>
+              </div>
+            </div>
+            <!--
+            <div class="swiper-slide w-100">
+              <div class="registerplayer-banner">
+                <img
+                  src="img/slider.jpg"
+                  alt="Academy Banner"
+                  class="img-responsive"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide w-100">
+              <div class="registerplayer-banner">
+                <img
+                  src="img/slider.jpg"
+                  alt="Academy Banner"
+                  class="img-responsive"
+                />
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <!-- <div class="banners-img position-relative mb-5" ng-if="banners.length>0">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide w-100"
+          ng-repeat="banner in banners track by $index"
+          ng-if="banner.active"
+        >
+          <div class="registerplayer-banner">
+            <img
+              ng-src="{{ banner.image | uploadpath }}"
+              alt="Player Registrations | Sports For All"
+              class="img-responsive"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div> -->
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="bg-color text-white mb-5">
+          <div class="text-center text-uppercase oswald-bold font-24 ls-2 py-2">
+            <a href="#" class="text-white no-underline">
+              Online Registrations Will Be Available Soon
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-if="club.content1">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="mb-5 content1">
+          <div class="">
+            <div
+              class="border-bottom border-dark text-capitalize font-18  mb-3"
+            >
+              <span class="pr-5 titillium-web-semiBold">About the club</span>
+            </div>
+          </div>
+          <div class="" ng-bind-html="club.content1 | rawHtml"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-if="club.content2">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="mb-5 content1">
+          <div class="">
+            <div
+              class="border-bottom border-dark text-capitalize font-18  mb-3"
+            >
+              <span class="pr-5 titillium-web-semiBold">Master Class</span>
+            </div>
+          </div>
+          <div class="" ng-bind-html="club.content2 | rawHtml"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-if="showStaff">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="team bg-color-light py-4">
+          <div class="">
+            <div
+              class="subhead oswald-bold font-24 mb-3 text-uppercase text-center"
+            >
+              <span class="px-2 border-bottom border-dark">
+                Coaching Team
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="position-relative p-4"
+            ng-repeat="staff in staffs track by $index"
+          >
+            <div class="team-image-holder pr-3" ng-if="!staff.image">
+              <img
+                src="img/img-holder/480x480.jpg"
+                alt="rifc-team"
+                class="img-responsive"
+              />
+            </div>
+            <div class="team-image-holder pr-3" ng-if="staff.image">
+              <img
+                ng-src="{{ staff.image | uploadpath }}"
+                alt="rifc-team"
+                class="img-responsive"
+              />
+            </div>
+            <div class="position-absolute team-brief w-100 py-4 pr-4">
+              <div
+                class="border-bottom border-dark text-capitalize font-18  mb-3"
+              >
+                <span class="pr-5 titillium-web-semiBold">{{
+                  staff.name
+                }}</span>
+                <span class="small">{{ staff.designation }}</span>
+              </div>
+              <div class="">
+                {{ staff.description }}
+              </div>
+            </div>
+          </div>
+          <!-- <div class="position-relative p-4">
+            <div class="team-image-holder pr-3">
+              <img src="img/img-holder/480x480.jpg" alt="rifc-team" class="img-responsive" />
+            </div>
+            <div class="position-absolute team-brief py-4 pr-4">
+              <div
+                class="border-bottom border-dark text-capitalize font-18  mb-3"
+              >
+                <span class="pr-5 titillium-web-semiBold">Vignesh Vignesh</span>
+                <span class="small">Founder</span>
+              </div>
+              <div class="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident a unde ab natus fuga deleniti nemo praesentium hic
+                eaque aut pariatur mollitia iste ex dignissimos omnis at,
+                aperiam delectus iure!
+              </div>
+            </div>
+          </div>
+          <div class="position-relative p-4">
+            <div class="team-image-holder pr-3">
+              <img src="img/img-holder/480x480.jpg" alt="rifc-team" class="img-responsive" />
+            </div>
+            <div class="position-absolute team-brief py-4 pr-4">
+              <div
+                class="border-bottom border-dark text-capitalize font-18  mb-3"
+              >
+                <span class="pr-5 titillium-web-semiBold">Vignesh Vignesh</span>
+                <span class="small">Founder</span>
+              </div>
+              <div class="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident a unde ab natus fuga deleniti nemo praesentium hic
+                eaque aut pariatur mollitia iste ex dignissimos omnis at,
+                aperiam delectus iure!
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
