@@ -43,13 +43,13 @@ myApp.controller("GalleryCtrl", function(
                       if (image.image) {
                         $scope.smallImage1 = $filter("uploadpath")(image.image);
                       } else {
-                        $scope.smallImage1 = "img/1.jpg";
+                        $scope.smallImage1 = "img/img-holder/1.jpg";
                       }
                     } else {
                       if (image.image) {
                         $scope.smallImage2 = $filter("uploadpath")(image.image);
                       } else {
-                        $scope.smallImage2 = "img/2g.png";
+                        $scope.smallImage2 = "img/img-holder/2.jpg";
                       }
                     }
                     break;
@@ -57,14 +57,14 @@ myApp.controller("GalleryCtrl", function(
                     if (image.image) {
                       $scope.mediumImage = $filter("uploadpath")(image.image);
                     } else {
-                      $scope.mediumImage = "img/3.jpg";
+                      $scope.mediumImage = "img/img-holder/570x300.jpg";
                     }
                     break;
                   case "Image 570 x 600":
                     if (image.image) {
                       $scope.largeImage = $filter("uploadpath")(image.image);
                     } else {
-                      $scope.largeImage = "img/4.jpg";
+                      $scope.largeImage = "img/img-holder/570x600.jpg";
                     }
                     break;
 
