@@ -1,13 +1,24 @@
-<section class="master-class my-5" id="tabs">
-  <!-- <div class="banners-img" ng-if="banner.banner">
+<section
+  class="master-class"
+  ng-class="{'my-5':!mainBanner.pageName,'mb-5':mainBanner.pageName}"
+  id="tabs"
+>
+  <div class="banners-img mb-5" ng-if="mainBanner.pageName">
     <img
-      ng-src="{{ banner.banner | uploadpath }}"
-      alt="{{ banner.name }} Banner"
+      ng-src="{{ mainBanner.image | uploadpath }}"
+      alt="{{ mainBanner.title }} Banner"
       class="img-responsive"
+      ng-if="mainBanner.image"
     />
-  </div> -->
+    <img
+      src="img/master-class-banner.jpg"
+      alt="{{ mainBanner.title }} Banner"
+      class="img-responsive"
+      ng-if="!mainBanner.image"
+    />
+  </div>
   <div class="container">
-    <div class="row">
+    <div class="row" ng-if="!mainBanner.pageName">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div
           class="text-center text-uppercase oswald-bold main-head font-32 mb-5"
