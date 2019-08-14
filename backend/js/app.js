@@ -6,7 +6,7 @@ var myApp = angular.module("myApp", [
   "angulartics.google.analytics",
   "imageupload",
   "ngMap",
-  "internationalPhoneNumber",
+  //"internationalPhoneNumber",
   "ui.bootstrap",
   "ui.select",
   "ngAnimate",
