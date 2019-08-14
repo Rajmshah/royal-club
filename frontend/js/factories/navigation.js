@@ -56,6 +56,14 @@ myApp.factory("NavigationService", function($http) {
         callback(data);
       });
     },
+    getBannerByPageName: function(formData, callback) {
+      $http
+        .post(adminurl + "Banner/getBannerByPageName", formData)
+        .then(function(data) {
+          data = data.data;
+          callback(data);
+        });
+    },
     getAlbumsByType: function(formData, callback) {
       $http
         .post(adminurl + "Gallery/getAlbumsByType", formData)

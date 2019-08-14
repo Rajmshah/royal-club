@@ -1,5 +1,6 @@
 var schema = new Schema({
   address: String,
+  officeAddress: String,
   mapLink: String,
   mobile: [String],
   email: [String]

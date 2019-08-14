@@ -25,6 +25,15 @@
       "url": ""
     },
     {
+      "name": "Office Address",
+      "type": "textarea",
+      "tableRef": "officeAddress",
+      "placeholder": "Enter Office Address",
+      "id": "officeAddress",
+      "validation": ["", "trim", ""],
+      "url": ""
+    },
+    {
       "name": "Mobile",
       "type": "tags",
       "tableRef": "mobile",
