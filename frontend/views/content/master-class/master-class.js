@@ -14,6 +14,8 @@ myApp.controller("MasterClassCtrl", function(
   $scope.navigation = NavigationService.getNavigation();
   var service = NavigationService;
 
+  $scope.mainBanner = {};
+
   $scope.masterClass = [];
   $scope.titles = [];
   $scope.firstTitle = true;
@@ -34,6 +36,26 @@ myApp.controller("MasterClassCtrl", function(
   $scope.hasPastPrevious = false;
   $scope.nextPast = "";
   $scope.previousPast = "";
+
+  $scope.getBannerByPageName = function() {
+    var banners = {};
+    banners.pageName = "Master Class";
+    banners.status = "Enable";
+    service.getBannerByPageName(banners, function(result) {
+      console.log(result);
+      if (result.value) {
+        if (result.data != "No Data Found") {
+          $scope.mainBanner = result.data;
+        } else {
+          $scope.mainBanner = {};
+        }
+      } else {
+        $scope.mainBanner = {};
+      }
+    });
+  };
+
+  $scope.getBannerByPageName();
 
   $scope.searchMasterClass = function() {
     service.searchMasterClass(function(result) {
