@@ -8,7 +8,7 @@ var myApp = angular.module("myApp", [
   "ngAnimate",
   "ngSanitize",
   "ui.select",
-  "angularPromiseButtons",
+  // "angularPromiseButtons",
   "toastr",
   "ui.swiper"
 ]);
