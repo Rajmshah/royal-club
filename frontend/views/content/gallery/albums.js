@@ -21,8 +21,8 @@ myApp.controller("GalleryAlbumsCtrl", function(
     albumDetail.mediaType = $stateParams.mediaType;
     service.getAlbumsByType(albumDetail, function(result) {
       if (result.value) {
-        if (result.data.results.length > 0) {
-          $scope.getAlbums = result.data.results;
+        if (result.data.length > 0) {
+          $scope.getAlbums = result.data;
         } else {
           $scope.getAlbums = [];
         }
