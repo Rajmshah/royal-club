@@ -70,7 +70,7 @@ myApp
             // n.width = 3;
             // n.height = 3;
           }
-          var t = index * Math.PI / 180;
+          var t = (index * Math.PI) / 180;
           var x = 4.0 * Math.pow(Math.sin(t), 3);
           var y =
             3.0 * Math.cos(t) -
@@ -316,6 +316,7 @@ myApp
   ) {
     $scope.json = JsonService;
     $scope.template = TemplateService;
+    $scope.form = {};
     var i = 0;
     if ($stateParams.page && !isNaN(parseInt($stateParams.page))) {
       $scope.currentPage = $stateParams.page;
@@ -364,6 +365,37 @@ myApp
     };
     JsonService.refreshView = $scope.getAllItems;
     $scope.getAllItems();
+
+    $scope.generateSampleExcel = function(formData) {
+      NavigationService.apiCallWOParam(
+        $scope.json.json.generateSampleExcel.url,
+        function(data) {
+          window.location.href =
+            adminurl + $scope.json.json.generateSampleExcel.url;
+        }
+      );
+    };
+
+    $scope.generateExcel = function(formData) {
+      NavigationService.apiCallWOParam(
+        $scope.json.json.generateExcel.url,
+        function(data) {
+          window.location.href = adminurl + $scope.json.json.generateExcel.url;
+        }
+      );
+    };
+
+    $scope.excelUploaded = function() {
+      NavigationService.uploadExcel(
+        $scope.json.json.uploadExcel.url,
+        $scope.form,
+        function(data) {
+          // console.log(data);
+          $scope.data = data.data;
+          $scope.getAllItems();
+        }
+      );
+    };
   })
   .controller("DetailCtrl", function(
     $scope,
@@ -423,13 +455,10 @@ myApp
               messText = "edited";
             }
             toastr.success(
-              $scope.json.json.name +
-                " " +
-                formData.name +
-                " " +
-                messText +
-                " successfully."
+              $scope.json.json.name + " " + messText + " successfully."
             );
+            // formData.name +
+            // " " +
           } else {
             messText = "creating";
             if ($scope.json.keyword._id) {
