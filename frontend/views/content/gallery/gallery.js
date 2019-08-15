@@ -93,8 +93,8 @@ myApp.controller("GalleryCtrl", function(
     photoDetail.limit = 4;
     service.getAlbumsByType(photoDetail, function(result) {
       if (result.value) {
-        if (result.data.results.length > 0) {
-          $scope.getPhotoAlbums = result.data.results;
+        if (result.data.length > 0) {
+          $scope.getPhotoAlbums = result.data;
         } else {
           $scope.getPhotoAlbums = [];
         }
@@ -111,8 +111,8 @@ myApp.controller("GalleryCtrl", function(
     videoDetail.limit = 4;
     service.getAlbumsByType(videoDetail, function(result) {
       if (result.value) {
-        if (result.data.results.length > 0) {
-          $scope.getVideoAlbums = result.data.results;
+        if (result.data.length > 0) {
+          $scope.getVideoAlbums = result.data;
         } else {
           $scope.getVideoAlbums = [];
         }
