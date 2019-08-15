@@ -29,12 +29,46 @@
                   />
                 </form>
                 <a
-                  ng-repeat="btn in json.json.button "
+                  ng-repeat="btn in json.json.button"
+                  class="btn"
+                  ng-class="btn.class"
+                  ng-click="json.eventAction(btn)"
+                  ng-if="btn.type=='page'"
+                  >{{ btn.name }}</a
+                >
+                <a
+                  ng-repeat="btn in json.json.button"
+                  class="btn"
+                  ng-class="btn.class"
+                  ng-click="generateSampleExcel()"
+                  ng-if="btn.type=='generateSampleExcel'"
+                  >{{ btn.name }}</a
+                >
+                <a
+                  ng-repeat="btn in json.json.button"
+                  class="btn"
+                  ng-class="btn.class"
+                  ng-click="generateExcel()"
+                  ng-if="btn.type=='generateExcel'"
+                  >{{ btn.name }}</a
+                >
+
+                <upload-image
+                  no-view
+                  type="excel"
+                  ng-repeat="btn in json.json.button"
+                  ng-class="btn.class"
+                  ng-if="btn.type=='uploadExcel'"
+                  ng-model="form.file"
+                  ng-callback="excelUploaded();"
+                ></upload-image>
+                <!-- <a
+                  ng-repeat="btn in json.json.button"
                   class="btn "
                   ng-class="btn.class "
                   ng-click="json.eventAction(btn)"
                   >{{ btn.name }}</a
-                >
+                > -->
               </div>
               <h3>
                 {{ json.json.description }}

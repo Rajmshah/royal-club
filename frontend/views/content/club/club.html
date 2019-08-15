@@ -36,28 +36,28 @@
                 />
               </div>
               <div class="registerplayer-banner" ng-if="banner.image">
-                <a
+                <!-- <a
                   href="{{ banner.link }}"
                   target="_self"
                   ng-if="banner.linkType == 'Internal'"
-                >
-                  <img
-                    ng-src="{{ banner.image | uploadpath }}"
-                    alt="Academy Banner"
-                    class="img-responsive"
-                  />
-                </a>
-                <a
+                > -->
+                <img
+                  ng-src="{{ banner.image | uploadpath }}"
+                  alt="Academy Banner"
+                  class="img-responsive"
+                />
+                <!-- </a> -->
+                <!-- <a
                   href="{{ banner.link }}"
                   target="_blank"
                   ng-if="banner.linkType == 'External'"
                 >
-                  <img
-                    ng-src="{{ banner.image | uploadpath }}"
-                    alt="Academy Banner"
-                    class="img-responsive"
-                  />
-                </a>
+                <img
+                  ng-src="{{ banner.image | uploadpath }}"
+                  alt="Academy Banner"
+                  class="img-responsive"
+                />
+                </a> -->
               </div>
             </div>
             <!--
@@ -81,8 +81,8 @@
             </div> -->
           </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next  swiper-button-white"></div>
+        <div class="swiper-button-prev  swiper-button-white"></div>
       </div>
       <!-- <div class="banners-img position-relative mb-5" ng-if="banners.length>0">
     <div class="swiper-container">

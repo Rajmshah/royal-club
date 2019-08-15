@@ -42,25 +42,25 @@
         </div>
         <div class="mb-3" ng-if="album.mediaType=='Video'">
           <a
-            ui-sref="gallery-photos({mediaType:'Video',folderName:videos.folderName})"
+            ui-sref="gallery-photos({mediaType:'Video',folderName:album.folderName})"
             class="text-dark no-underline"
           >
-            <div class="photo-holder pb-2" ng-if="videos.videoThumbnail">
+            <div class="photo-holder pb-2" ng-if="album.videoThumbnail">
               <img
-                src="{{ videos.videoThumbnail | uploadpath }}"
-                alt="{{ videos.folderName }}"
+                src="{{ album.videoThumbnail | uploadpath }}"
+                alt="{{ album.folderName }}"
                 class="img-responsive"
               />
             </div>
-            <div class="photo-holder pb-2" ng-if="!videos.videoThumbnail">
+            <div class="photo-holder pb-2" ng-if="!album.videoThumbnail">
               <img
                 src="img/img-holder/1184x690.jpg"
-                alt="{{ videos.folderName }}"
+                alt="{{ album.folderName }}"
                 class="img-responsive"
               />
             </div>
             <div class="photo-title titillium-web-bold font-18">
-              {{ videos.folderName }}
+              {{ album.folderName }}
             </div>
           </a>
         </div>
