@@ -76,7 +76,7 @@
           <div class="tab-content px-3 pt-2 px-sm-0" id="nav-tabContent">
             <div
               ng-repeat="master in masterClass | orderBy:'order' track by $index"
-              class="tab-pane fade"
+              class="tab-pane fade titillium-web-regular"
               ng-class="{'show active':(firstTitle==true && master.order==1) || (secondTitle==true && master.order==2) || (thirdTitle==true && master.order==3) || (fourthTitle==true && master.order==4)}"
               id="{{ master.order }}"
               role="tabpanel"

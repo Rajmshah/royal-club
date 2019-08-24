@@ -5,26 +5,46 @@ footer {
 }
 
 .footer-css {
+  ::placeholder {
+    color: $white;
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    color: $white;
+  }
+
+  ::-ms-input-placeholder {
+    color: $white;
+  }
+
   input {
-    background-color: #ede7e7;
-    color: $header-footer;
+    background-color: transparent;
+    color: $white;
+    border-color: $white;
     &:focus {
-      background-color: #ede7e7;
-      color: $header-footer;
-      border: 0;
+      background-color: transparent;
+      color: $white;
+      border-color: $white;
     }
   }
   .btn {
-    padding: 0;
-    background-color: $white;
+    &:hover {
+      background-color: $white;
+      .fas {
+        color: $header-footer;
+      }
+    }
     box-shadow: none;
-    border: 0;
+    border-color: $white;
   }
-  .far {
-    font-size: 40px;
-    padding: 0 3px;
+
+  .fas {
+    // font-size: 40px;
+    // padding: 0 3px;
+    @extend .font-24;
     line-height: 0.8;
-    color: $header-footer;
+    color: $white;
   }
 }
 

@@ -47,7 +47,9 @@ myApp.controller("ContactUsCtrl", function(
         if (result.value) {
           $scope.showError = false;
           $scope.showValidationError = false;
-          toastr.success("Enquiry form submitted.");
+          toastr.success(
+            "Thank you for filling the enquiry form, we will get back to you shortly."
+          );
           $scope.formData = {};
         } else {
           toastr.error("Something went wrong.");

@@ -3,16 +3,17 @@
 @include media-breakpoint-down(md) {
   //For All
   .font-30 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+  .pt5,
+  .content {
+    padding-top: 5.3rem;
   }
   //For All End
   //Header
-  .navbar-expand-md .navbar-nav .nav-link {
-    padding-right: 0.4rem;
-    padding-left: 0.4rem;
-  }
-  .navbar-nav li a {
-    font-size: 0.781rem;
+  header .navbar-light .navbar-nav .nav-item .nav-link {
+    padding: 33px 11px;
+    font-size: 0.8rem;
   }
   //Header End
 }
