@@ -1,5 +1,5 @@
 <!--Banner-->
-<section class="club my-5">
+<section class="club mb-5">
   <!-- <div class="banners-img" ng-if="banner.banner">
     <img
       ng-src="{{ banner.banner | uploadpath }}"
@@ -8,8 +8,94 @@
     />
   </div> -->
 
+  <div class="" ng-if="showBanner">
+    <div class="banners-img position-relative mb-5">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide w-100"
+            ng-repeat="banner in banners track by $index"
+          >
+            <div class="registerplayer-banner" ng-if="!banner.image">
+              <img
+                src="img/img-holder/1920x600.jpg"
+                alt="Academy Banner"
+                class="img-responsive"
+              />
+            </div>
+            <div class="registerplayer-banner" ng-if="banner.image">
+              <!-- <a
+                href="{{ banner.link }}"
+                target="_self"
+                ng-if="banner.linkType == 'Internal'"
+              > -->
+              <img
+                ng-src="{{ banner.image | uploadpath }}"
+                alt="Academy Banner"
+                class="img-responsive"
+              />
+              <!-- </a> -->
+              <!-- <a
+                href="{{ banner.link }}"
+                target="_blank"
+                ng-if="banner.linkType == 'External'"
+              >
+              <img
+                ng-src="{{ banner.image | uploadpath }}"
+                alt="Academy Banner"
+                class="img-responsive"
+              />
+              </a> -->
+            </div>
+          </div>
+          <!--
+          <div class="swiper-slide w-100">
+            <div class="registerplayer-banner">
+              <img
+                src="img/img-holder/1920x600.jpg"
+                alt="Academy Banner"
+                class="img-responsive"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide w-100">
+            <div class="registerplayer-banner">
+              <img
+                src="img/img-holder/1920x600.jpg"
+                alt="Academy Banner"
+                class="img-responsive"
+              />
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="swiper-button-next  swiper-button-white"></div>
+      <div class="swiper-button-prev  swiper-button-white"></div>
+    </div>
+    <!-- <div class="banners-img position-relative mb-5" ng-if="banners.length>0">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div
+        class="swiper-slide w-100"
+        ng-repeat="banner in banners track by $index"
+        ng-if="banner.active"
+      >
+        <div class="registerplayer-banner">
+          <img
+            ng-src="{{ banner.image | uploadpath }}"
+            alt="Player Registrations | Sports For All"
+            class="img-responsive"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div> -->
+  </div>
   <div class="container">
-    <div class="row">
+    <div class="row" ng-if="!showBanner">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div
           class="text-center text-uppercase oswald-bold main-head font-32 mb-5"
@@ -20,93 +106,7 @@
         </div>
       </div>
     </div>
-    <div class="row" ng-if="showBanner">
-      <div class="banners-img position-relative mb-5">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide w-100"
-              ng-repeat="banner in banners track by $index"
-            >
-              <div class="registerplayer-banner" ng-if="!banner.image">
-                <img
-                  src="img/img-holder/1920x600.jpg"
-                  alt="Academy Banner"
-                  class="img-responsive"
-                />
-              </div>
-              <div class="registerplayer-banner" ng-if="banner.image">
-                <!-- <a
-                  href="{{ banner.link }}"
-                  target="_self"
-                  ng-if="banner.linkType == 'Internal'"
-                > -->
-                <img
-                  ng-src="{{ banner.image | uploadpath }}"
-                  alt="Academy Banner"
-                  class="img-responsive"
-                />
-                <!-- </a> -->
-                <!-- <a
-                  href="{{ banner.link }}"
-                  target="_blank"
-                  ng-if="banner.linkType == 'External'"
-                >
-                <img
-                  ng-src="{{ banner.image | uploadpath }}"
-                  alt="Academy Banner"
-                  class="img-responsive"
-                />
-                </a> -->
-              </div>
-            </div>
-            <!--
-            <div class="swiper-slide w-100">
-              <div class="registerplayer-banner">
-                <img
-                  src="img/img-holder/1920x600.jpg"
-                  alt="Academy Banner"
-                  class="img-responsive"
-                />
-              </div>
-            </div>
-            <div class="swiper-slide w-100">
-              <div class="registerplayer-banner">
-                <img
-                  src="img/img-holder/1920x600.jpg"
-                  alt="Academy Banner"
-                  class="img-responsive"
-                />
-              </div>
-            </div> -->
-          </div>
-        </div>
-        <div class="swiper-button-next  swiper-button-white"></div>
-        <div class="swiper-button-prev  swiper-button-white"></div>
-      </div>
-      <!-- <div class="banners-img position-relative mb-5" ng-if="banners.length>0">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div
-          class="swiper-slide w-100"
-          ng-repeat="banner in banners track by $index"
-          ng-if="banner.active"
-        >
-          <div class="registerplayer-banner">
-            <img
-              ng-src="{{ banner.image | uploadpath }}"
-              alt="Player Registrations | Sports For All"
-              class="img-responsive"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div> -->
-    </div>
-    <div class="row">
+    <div class="row" hidden>
       <div class="col-sm-12">
         <div class="bg-color text-white mb-5">
           <div class="text-center text-uppercase oswald-bold font-24 ls-2 py-2">
@@ -127,7 +127,10 @@
               <span class="pr-5 titillium-web-semiBold">About the club</span>
             </div>
           </div>
-          <div class="" ng-bind-html="club.content1 | rawHtml"></div>
+          <div
+            class="titillium-web-regular"
+            ng-bind-html="club.content1 | rawHtml"
+          ></div>
         </div>
       </div>
     </div>
@@ -141,7 +144,10 @@
               <span class="pr-5 titillium-web-semiBold">Master Class</span>
             </div>
           </div>
-          <div class="" ng-bind-html="club.content2 | rawHtml"></div>
+          <div
+            class="titillium-web-regular"
+            ng-bind-html="club.content2 | rawHtml"
+          ></div>
         </div>
       </div>
     </div>

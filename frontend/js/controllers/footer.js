@@ -21,7 +21,7 @@ myApp.controller("footerCtrl", function(
           $scope.showSubscribeError = false;
           $scope.showSubscribeValidationError = false;
           $scope.subscribe = {};
-          toastr.success("Subscription received successfully.");
+          toastr.success("Thank you for subscribing to our newsletter.");
         } else {
           toastr.error("Something went wrong.");
           $scope.showSubscribeError = true;

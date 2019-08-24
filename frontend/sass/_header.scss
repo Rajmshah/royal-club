@@ -3,26 +3,28 @@ header {
   position: fixed;
   width: 100%;
   z-index: 99;
+  .navbar {
+    padding: 0 2rem;
+  }
   .navbar-light .navbar-nav {
     .nav-item {
-      padding: 0 3px;
+      padding: 0;
       .nav-link {
+        padding: 33px 22px;
+        font-size: 0.93rem;
         color: $text-color;
-        border-bottom: 3px solid transparent;
         &:hover {
+          background-color: #ffffff30;
           color: $header-footer-hover;
-          border-bottom: 3px solid $white;
           transition: auto;
-          transform: skew(14deg, -2deg);
         }
       }
     }
   }
   .navbar-light .navbar-nav .active > .nav-link {
     color: $header-footer-hover;
-    border-bottom: 3px solid $white;
+    background-color: #ffffff30;
     transition: auto;
-    transform: skew(14deg, -2deg);
   }
   .navbar-light .navbar-toggler {
     color: $white;

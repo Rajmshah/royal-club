@@ -1,6 +1,6 @@
 <footer
   ng-controller="footerCtrl"
-  class="footer  footer-css py-3 titillium-web-semiBold"
+  class="footer  footer-css pt-5 pb-3 titillium-web-semiBold"
 >
   <div class="container">
     <div class="row justify-content-center align-items-center mb-5">
@@ -22,10 +22,11 @@
                 name="email"
                 ng-model="subscribe.email"
                 class="form-control"
+                placeholder="Your e-mail address"
               />
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit">
-                  <i class="far fa-envelope"></i>
+                  <i class="fas fa-envelope"></i>
                 </button>
               </div>
             </div>
@@ -42,7 +43,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-4">
       <div class="col-lg-6 col-md-6 col-sm-6 col-12">
         <div class="footerLists social-list">
           <div>RIFC Social Handles</div>
@@ -93,12 +94,14 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="footerMain text-center">
           <div class="footerLists">
-            <a ui-sref="home">Copyright - rifc.com</a>
-            <span class="listSeparator">|</span>
+            <a ui-sref="home"
+              ><i class="far fa-copyright"></i> 2019 Copyright : rifc.in</a
+            >
+            <!-- <span class="listSeparator">|</span> -->
           </div>
-          <div class="footerLists">
+          <!-- <div class="footerLists">
             <a href="#">FAQs</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
