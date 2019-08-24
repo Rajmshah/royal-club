@@ -7,11 +7,6 @@
     font-size: 0.875rem;
   }
   //For All End
-  //Header
-  .navbar-nav {
-    width: 75%;
-  }
-  //Header End
   //Footer
   .subscribe-head {
     text-align: center !important;
@@ -20,6 +15,9 @@
   .social-list {
     text-align: center !important;
     padding-bottom: 1rem;
+    span {
+      margin-left: 0 !important;
+    }
   }
 
   .left-section {

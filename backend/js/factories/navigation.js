@@ -168,36 +168,10 @@ myApp.factory("NavigationService", function($http) {
           callback(data);
         });
     },
-    getLatLng: function(address, i, callback) {
-      $http({
-        url:
-          "https://maps.googleapis.com/maps/api/geocode/json?address=" +
-          address +
-          "&key=AIzaSyC62zlixVsjaq4zDaL4cefNCubjCgxkte4",
-        method: "GET",
-        withCredentials: false
-      }).then(function(data) {
-        data = data.data;
-        callback(data, i);
-      });
-    },
-    // uploadExcel: function (form, callback) {
-    //     $http.post(adminurl + form.model + '/import', {
-    //         file: form.file
-    //     }).then(function (data) {
-    //         data = data.data;
-    //         callback(data);
-    //     });
-    // },
+
     uploadExcel: function(url, form, callback) {
       $http.post(adminurl + url, form).then(function(data) {
         data = data.data;
-        callback(data);
-      });
-    },
-    generateCategoryDetailExcel: function(url, callback) {
-      $http.post(adminurl + url).then(function(data) {
-        // data = data.data;
         callback(data);
       });
     }

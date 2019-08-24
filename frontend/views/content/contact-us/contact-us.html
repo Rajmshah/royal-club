@@ -26,10 +26,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-10 mx-auto mb-3">
+      <div
+        class="col-10 mx-auto"
+        ng-class="{'mb-3':contact.officeAddress,'mb-5':!contact.officeAddress}"
+      >
         <div class="row no-gutters">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="mb-4 text-center">
+            <div class="text-center">
               <div class="">
                 <i class="fas fa-mobile"></i>
               </div>
@@ -48,7 +51,7 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div
-              class="mb-4 text-center border-left border-right border-light px-3 mobile-border"
+              class="text-center border-left border-right border-light px-3 mobile-border"
             >
               <div class="">
                 <i class="fas fa-map-marker"></i>
@@ -64,7 +67,7 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="mb-4 text-center">
+            <div class="text-center">
               <div class="">
                 <i class="fas fa-envelope"></i>
               </div>
@@ -84,7 +87,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="contact.officeAddress">
       <div class="col-10 mx-auto mb-5">
         <div class="text-center">
           Office Address:

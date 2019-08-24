@@ -53,10 +53,37 @@
       "class": "btn-success",
       "type": "page",
       "action": "createGallery"
+    },
+    {
+      "name": "Sample",
+      "icon": "",
+      "class": "btn-info mr-1",
+      "type": "generateSampleExcel"
+    },
+    {
+      "name": "Import",
+      "icon": "",
+      "class": "btn-info",
+      "type": "uploadExcel"
+    },
+    {
+      "name": "Export",
+      "icon": "",
+      "class": "btn-info",
+      "type": "generateExcel"
     }
   ],
   "apiCall": {
     "url": "Gallery/search",
     "params": "_id"
+  },
+  "generateSampleExcel": {
+    "url": "Gallery/generateSampleExcel"
+  },
+  "generateExcel": {
+    "url": "Gallery/generateExcel"
+  },
+  "uploadExcel": {
+    "url": "Gallery/uploadExcel"
   }
 }

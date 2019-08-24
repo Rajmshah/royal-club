@@ -22,8 +22,8 @@ myApp.controller("GalleryPhotosCtrl", function(
     galleryDetail.folderName = $stateParams.folderName;
     service.getAllByAlbumType(galleryDetail, function(result) {
       if (result.value) {
-        if (result.data.results.length > 0) {
-          $scope.getGallery = result.data.results;
+        if (result.data.length > 0) {
+          $scope.getGallery = result.data;
         } else {
           $scope.getGallery = [];
         }

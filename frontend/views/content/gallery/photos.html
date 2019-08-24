@@ -18,7 +18,7 @@
       >
         <div class="mb-3" ng-if="gallery.mediaType=='Photo'">
           <a
-            href="img/img-holder/1184x690.jpg"
+            href="{{ gallery.mediaLink | uploadpath }}"
             rel="group"
             data-fancybox="gallery"
             class="text-dark no-underline"

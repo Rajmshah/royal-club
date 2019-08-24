@@ -397,7 +397,7 @@ a,
 }
 
 .content {
-  @extend .pt-6;
+  @extend .pt5;
 }
 
 .img-full {
@@ -489,6 +489,10 @@ header {
   padding-top: 6.5rem;
 }
 
+.pt5 {
+  padding-top: 5.4rem;
+}
+
 .font-32 {
   font-size: 2rem;
 }
@@ -499,6 +503,10 @@ header {
 
 .font-24 {
   font-size: 1.5rem;
+}
+
+.font-20 {
+  font-size: 1.3rem;
 }
 
 .font-18 {
