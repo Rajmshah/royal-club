@@ -66,7 +66,7 @@ module.exports.globals = {
 
 global.mongoose = require("mongoose");
 global.MongoPaging = require("mongo-cursor-pagination");
-global.database = "rifc";
+global.database = "rifc-live";
 global.storageBucket = "rifc";
 mongoose.Promise = global.Promise;
 global.mongourl = "mongodb://localhost:27017/" + database;
