@@ -43,7 +43,7 @@
     "moment": "^2.20.1",
     "mongo-cursor-pagination": "^7.1.0",
     "mongodb": "^2.2.34",
-    "mongoose": "^4.13.10",
+    "mongoose": "^4.13.21",
     "mongoose-deep-populate": "^3.0.0",
     "mongoose-middleware": "^1.0.0",
     "mongoose-populate-virtuals": "^1.0.3",
